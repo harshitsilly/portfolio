@@ -4,8 +4,8 @@ import styles from './index.module.scss';
 
 const App = () => {
 	return (
-		<Box className={styles.bg} pad="xs">
-			<Navbar title="Harshit Sinha" padH="30px">
+		<Box className={styles.bg} pad="l">
+			<Navbar title="Harshit Sinha" padH="40px">
 				<Box>Resume</Box>
 				<Box>Snippets</Box>
 				<Box onClick={() => window.open('https://battery941.wixsite.com/stockmaster')}>Blog</Box>

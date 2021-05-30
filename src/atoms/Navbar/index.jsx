@@ -1,4 +1,5 @@
 import { forwardRef, useEffect, useState, cloneElement } from 'react';
+import { motion } from 'framer-motion';
 import Modal from '../Modal';
 import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
@@ -30,7 +31,7 @@ const Navbar = forwardRef(({ title, className, padH, style, ...props }, ref) => 
 			<Modal onClose={handleShowModal}>
 				{props.children.map((element) =>
 					cloneElement(element, {
-						style: { padding: '30px' },
+						style: { padding: '30px', cursor: 'pointer' },
 					})
 				)}
 			</Modal>
@@ -45,19 +46,23 @@ const Navbar = forwardRef(({ title, className, padH, style, ...props }, ref) => 
 						<Icon type="menu" onClick={handleShowModal} />
 					</span>
 				) : (
-					props.children.map((element) =>
-						cloneElement(element, {
-							style: { padding: `0 ${padH}` },
-						})
-					)
+					props.children.map((element) => {
+						return (
+							<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+								{cloneElement(element, {
+									style: { padding: `0 ${padH}`, cursor: 'pointer' },
+								})}
+							</motion.div>
+						);
+					})
 				)}
 			</div>
 			<style jsx>{`
 				div {
 					display: flex;
 					flex-direction: row;
-					cursor: pointer;
 				}
+
 				.closeBtn {
 					position: absolute;
 					top: ${s};

@@ -17,6 +17,10 @@ const Icon = forwardRef(({ className, onClick, style, type, ...props }, ref) => 
 				<DynamicComponent type={type} />
 			</div>
 			<style jsx>{`
+				div {
+					cursor: ${onClick ? 'pointer' : null};
+				}
+
 				svg {
 					height: ${m};
 					width: ${m};
