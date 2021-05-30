@@ -2,6 +2,7 @@ import { Box, Navbar } from '../atoms';
 import Intro from './Intro';
 import styles from './index.module.scss';
 import Curve from '../svg/curve.svg';
+import Theme from './../atoms/Theme/index';
 
 const App = () => {
 	return (
@@ -13,6 +14,7 @@ const App = () => {
 					<Box onClick={() => window.open('https://battery941.wixsite.com/stockmaster')}>Blog</Box>
 					<Box onClick={() => window.open('http://localhost:57078')}>StoryBoard</Box>
 				</Navbar>
+				<Theme />
 			</Box>
 			<Intro></Intro>
 

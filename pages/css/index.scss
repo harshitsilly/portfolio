@@ -1,11 +1,18 @@
 // @import url('variable.scss');
 
-html,
-root {
+html[data-theme='dark'] {
 	--brand: purple;
 	--headerBG: #182635;
 	--background: #151e26;
 	--color: white;
+	color: var(--color);
+}
+
+html[data-theme='light'] {
+	--brand: #9a97f3;
+	--headerBG: #818cab;
+	--background: #e1e1ff;
+	--color: #161625;
 	color: var(--color);
 }
 body {
