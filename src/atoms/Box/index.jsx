@@ -2,7 +2,7 @@ import { forwardRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as Constants from '../constants';
 
-const Box = forwardRef(({ className, style, ...props }, ref) => {
+const Box = forwardRef(({ className, onClick, style, ...props }, ref) => {
 	useEffect(() => {
 		// window.addEventListener();
 		return () => {};
@@ -10,7 +10,7 @@ const Box = forwardRef(({ className, style, ...props }, ref) => {
 
 	return (
 		<>
-			<div ref={ref} className={className} style={style}>
+			<div ref={ref} onClick={onClick} className={className} style={style}>
 				{props.children}
 			</div>
 			<style jsx>{`

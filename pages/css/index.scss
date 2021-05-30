@@ -3,4 +3,7 @@
 html,
 root {
 	--brand: purple;
+	--background: #151e26;
+	--color: white;
+	color: var(--color);
 }
