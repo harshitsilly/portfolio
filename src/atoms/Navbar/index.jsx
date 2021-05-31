@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
 import { s } from '../constants';
 
-const Navbar = forwardRef(({ title, className, padH, style, ...props }, ref) => {
+const Navbar = forwardRef(({ title, className, padH, style, align, ...props }, ref) => {
 	const [isModal, setIsModal] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 	useEffect(() => {
@@ -39,7 +39,7 @@ const Navbar = forwardRef(({ title, className, padH, style, ...props }, ref) => 
 	}
 	return (
 		<>
-			<div ref={ref} className={className} style={style}>
+			<div ref={ref} className={className} style={{ justifyContent: align }}>
 				<div>{title}</div>
 				{isModal ? (
 					<span className="closeBtn">
@@ -47,6 +47,15 @@ const Navbar = forwardRef(({ title, className, padH, style, ...props }, ref) => 
 					</span>
 				) : (
 					props.children.map((element) => {
+						if (element.props.navUtils) {
+							return (
+								<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+									{cloneElement(element, {
+										style: { padding: `0 ${padH}`, cursor: 'pointer' },
+									})}
+								</motion.div>
+							);
+						}
 						return (
 							<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
 								{cloneElement(element, {

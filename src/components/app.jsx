@@ -8,16 +8,18 @@ const App = () => {
 	return (
 		<Box className={styles.bg}>
 			<Box pad="l">
-				<Navbar title="Harshit Sinha" padH="40px">
+				<Navbar title="Harshit Sinha" padH="40px" align="center">
 					{/* <Box>Resume</Box> */}
 					<Box>Snippets</Box>
 					<Box onClick={() => window.open('https://battery941.wixsite.com/stockmaster')}>Blog</Box>
 					<Box onClick={() => window.open('http://localhost:57078')}>StoryBoard</Box>
+
+					<Box navUtils>
+						<Theme dark />
+					</Box>
 				</Navbar>
-				<Theme />
 			</Box>
 			<Intro></Intro>
-
 			<Curve style={{ width: '100vw' }}></Curve>
 		</Box>
 	);

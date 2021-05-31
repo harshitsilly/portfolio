@@ -13,11 +13,11 @@ const Icon = forwardRef(({ className, onClick, style, type, ...props }, ref) => 
 
 	return (
 		<>
-			<div onClick={onClick} ref={ref} className={className} style={style}>
+			<span onClick={onClick} ref={ref} className={className} style={style}>
 				<DynamicComponent type={type} />
-			</div>
+			</span>
 			<style jsx>{`
-				div {
+				span {
 					cursor: ${onClick ? 'pointer' : null};
 				}
 
