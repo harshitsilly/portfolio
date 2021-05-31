@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
 import { s } from '../constants';
 
-const Navbar = forwardRef(({ title, className, padH, style, align, ...props }, ref) => {
+const Navbar = forwardRef(({ title, className, padH, style, align, bold, ...props }, ref) => {
 	const [isModal, setIsModal] = useState(false);
 	const [showModal, setShowModal] = useState(false);
+	const navItemStyle = { padding: `0 ${padH}`, cursor: 'pointer', fontWeight: `${bold ? '600' : '500'}` };
 	useEffect(() => {
 		// window.addEventListener();
 		function handleResize() {
@@ -40,7 +41,7 @@ const Navbar = forwardRef(({ title, className, padH, style, align, ...props }, r
 	return (
 		<>
 			<div ref={ref} className={className} style={{ justifyContent: align }}>
-				<div>{title}</div>
+				<div style={navItemStyle}>{title}</div>
 				{isModal ? (
 					<span className="closeBtn">
 						<Icon type="menu" onClick={handleShowModal} />
@@ -59,7 +60,7 @@ const Navbar = forwardRef(({ title, className, padH, style, align, ...props }, r
 						return (
 							<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
 								{cloneElement(element, {
-									style: { padding: `0 ${padH}`, cursor: 'pointer' },
+									style: navItemStyle,
 								})}
 							</motion.div>
 						);

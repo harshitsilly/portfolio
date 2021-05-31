@@ -15,7 +15,15 @@ html[data-theme='light'] {
 	--color: #161625;
 	color: var(--color);
 }
+root {
+	--font-weight-bold: 500;
+	--font-weight-medium: 400;
+	--font-weight-light: 300;
+	--font-family: 'Wotfard', Futura, -apple-system, sans-serif;
+	--font-family-mono: 'League Mono', 'Fira Mono', monospace;
+}
 body {
 	height: 100vh;
 	width: 100vw;
+	font-family: var(--font-family);
 }

@@ -8,7 +8,7 @@ const App = () => {
 	return (
 		<Box className={styles.bg}>
 			<Box pad="l">
-				<Navbar title="Harshit Sinha" padH="40px" align="center">
+				<Navbar title="Harshit Sinha" padH="35px" align="center" bold>
 					{/* <Box>Resume</Box> */}
 					<Box>Snippets</Box>
 					<Box onClick={() => window.open('https://battery941.wixsite.com/stockmaster')}>Blog</Box>
