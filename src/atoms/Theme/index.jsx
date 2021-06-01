@@ -2,9 +2,8 @@ import { forwardRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
-let theme;
 const Theme = forwardRef(({ className, dark, style }, ref) => {
-	const [isDark, setIsDark] = useState(theme ?? dark);
+	const [isDark, setIsDark] = useState(dark);
 	useEffect(() => {
 		handleTheme();
 		return () => {};
@@ -13,7 +12,6 @@ const Theme = forwardRef(({ className, dark, style }, ref) => {
 	const handleTheme = () => {
 		document.documentElement.setAttribute('data-theme', `${isDark ? 'dark' : 'light'}`);
 		setIsDark(!isDark);
-		theme = isDark;
 	};
 	return (
 		<>
