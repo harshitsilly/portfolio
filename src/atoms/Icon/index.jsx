@@ -13,7 +13,7 @@ const Icon = forwardRef(({ className, onClick, style, type, ...props }, ref) => 
 
 	return (
 		<>
-			<span onClick={onClick} ref={ref} className={className} style={style}>
+			<span onClick={onClick} ref={ref} className={className} style={{ ...style, fill: 'var(--color-text)' }}>
 				<DynamicComponent type={type} />
 			</span>
 			<style jsx>{`

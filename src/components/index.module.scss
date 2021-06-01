@@ -1,7 +1,4 @@
 .bg {
-	background-color: var(--background);
+	background: linear-gradient(0deg, var(--color-homepage-dark), var(--color-homepage-light));
 	color: var(--color);
-}
-.headerBG {
-	background-color: var(--headerBG);
 }

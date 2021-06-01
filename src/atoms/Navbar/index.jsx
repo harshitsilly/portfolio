@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
 import { s } from '../constants';
 
-const Navbar = forwardRef(({ title, className, padH, style, align, bold, ...props }, ref) => {
+const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align, bold, ...props }, ref) => {
 	const [isModal, setIsModal] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 	const navItemStyle = { padding: `0 ${padH}`, cursor: 'pointer', fontWeight: `${bold ? '600' : '500'}` };
@@ -41,7 +41,9 @@ const Navbar = forwardRef(({ title, className, padH, style, align, bold, ...prop
 	return (
 		<>
 			<div ref={ref} className={className} style={{ justifyContent: align }}>
-				<div style={navItemStyle}>{title}</div>
+				<div onClick={onTitleClick} style={navItemStyle}>
+					{title}
+				</div>
 				{isModal ? (
 					<span className="closeBtn">
 						<Icon type="menu" onClick={handleShowModal} />

@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import App from '../src/components/app'
+import Layout from '../components/layout'
+
 
 
 export default function Home() {
@@ -11,9 +12,9 @@ export default function Home() {
       </Head>
 
       <main>
-      
-       <App/>
-     
+        <Layout>
+      Coming Soon
+       </Layout>
       </main>
 
       <footer>

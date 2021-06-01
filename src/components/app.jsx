@@ -1,26 +1,17 @@
-import { Box, Navbar } from '../atoms';
+import { Box, Navbar, Theme } from '../atoms';
 import Intro from './Intro';
 import styles from './index.module.scss';
 import Curve from '../svg/curve.svg';
-import Theme from './../atoms/Theme/index';
+import Layout from '../../components/layout';
 
 const App = () => {
 	return (
 		<Box className={styles.bg}>
 			<Box pad="l">
-				<Navbar title="Harshit Sinha" padH="35px" align="center" bold>
-					{/* <Box>Resume</Box> */}
-					<Box>Snippets</Box>
-					<Box onClick={() => window.open('https://battery941.wixsite.com/stockmaster')}>Blog</Box>
-					<Box onClick={() => window.open('http://localhost:57078')}>StoryBoard</Box>
-
-					<Box navUtils>
-						<Theme dark />
-					</Box>
-				</Navbar>
+				<Layout />
 			</Box>
 			<Intro></Intro>
-			<Curve style={{ width: '100vw' }}></Curve>
+			<Curve style={{ width: '100vw', fill: 'var(--color-background)' }}></Curve>
 		</Box>
 	);
 };
