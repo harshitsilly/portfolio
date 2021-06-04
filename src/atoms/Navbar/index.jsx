@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useState, cloneElement, useLayoutEffect } from 'react';
+import { forwardRef, useEffect, useState, cloneElement, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Modal from '../Modal';
 import PropTypes from 'prop-types';
@@ -8,17 +8,18 @@ import { s } from '../constants';
 let selectedNavItem;
 
 const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align, bold, ...props }, ref) => {
-	const [isModal, setIsModal] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 	const [showModal, setShowModal] = useState(false);
-	const navItemStyle = { margin: `0 ${padH}`, cursor: 'pointer', fontWeight: `${bold ? '600' : '500'}` };
+	const selectedKey = useRef(null);
+
 	useEffect(() => {
 		// window.addEventListener();
 		function handleResize() {
 			if (window.innerWidth <= 600) {
-				setIsModal(true);
+				setIsMobile(true);
 			} else {
-				setIsModal(false);
 				setShowModal(false);
+				setIsMobile(false);
 			}
 		}
 		handleResize();
@@ -29,81 +30,104 @@ const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align,
 	});
 
 	const handleShowModal = () => setShowModal(!showModal);
-	if (isModal && showModal) {
-		return (
-			<Modal onClose={handleShowModal}>
-				{props.children.map((element) =>
-					cloneElement(element, {
-						style: { margin: '30px', cursor: 'pointer' },
-					})
-				)}
-			</Modal>
-		);
-	}
-	const onNavBarClick = (e) => {
-		if (selectedNavItem) {
-			selectedNavItem.style.borderBottom = '';
+
+	const getNavStyle = (element) => {
+		if (isMobile) {
+			let style = { margin: ` ${padH} 0`, cursor: 'pointer', fontWeight: `${bold ? '600' : '500'}` };
+			if (!isNaN(element) && selectedKey?.current !== element) {
+				style = { ...style, ...{ opacity: 0.7 } };
+			}
+			return style;
 		}
-		if (e?.target) {
-			e.target.style.borderBottom = '5px solid var(--color-secondary)';
-			selectedNavItem = e.target;
+
+		return { margin: `0 ${padH}`, cursor: 'pointer', fontWeight: `${bold ? '600' : '500'}` };
+	};
+
+	const onNavBarClick = (e, fromHeader) => {
+		if (isMobile && !fromHeader) {
+			handleShowModal();
+		} else {
+			if (selectedNavItem) {
+				selectedNavItem.style.borderBottom = '';
+			}
+			if (e?.currentTarget) {
+				e.target.style.borderBottom = '5px solid var(--color-secondary)';
+				selectedNavItem = e.target;
+			}
 		}
+		selectedKey.current = parseInt(e?.currentTarget.getAttribute('data-key'));
 	};
 
 	const onNavHeaderClick = () => {
 		onTitleClick();
-		onNavBarClick();
+		onNavBarClick(null, true);
 	};
-	return (
-		<>
-			<div ref={ref} className={className} style={{ justifyContent: align }}>
-				<div onClick={onNavHeaderClick} style={navItemStyle}>
-					{title}
-				</div>
-				{isModal ? (
-					<span className="closeBtn">
-						<Icon type="menu" onClick={handleShowModal} />
-					</span>
-				) : (
-					props.children.map((element) => {
-						if (element.props.navUtils) {
-							return (
-								<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-									{cloneElement(element, {
-										style: { margin: `0 ${padH}`, cursor: 'pointer' },
-									})}
-								</motion.div>
-							);
-						}
-						return (
-							<motion.div onClick={onNavBarClick} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-								{cloneElement(element, {
-									style: navItemStyle,
-								})}
-							</motion.div>
-						);
-					})
-				)}
-			</div>
-			<style jsx>{`
-				div {
-					display: flex;
-					flex-direction: row;
-				}
 
-				.closeBtn {
-					position: absolute;
-					top: ${s};
-					right: ${s};
-				}
-				@media only screen and (max-width: 600px) {
+	const getNavContent = () => {
+		return props.children.map((element, index) => {
+			if (element.props.navUtils) {
+				return (
+					<motion.div whileHover={{ scale: 1.1 }} style={getNavStyle()} data-key={index} key={index}>
+						{element}
+					</motion.div>
+				);
+			}
+			return (
+				<motion.div
+					onClick={(e) => {
+						element.props.onClick();
+						onNavBarClick(e);
+					}}
+					whileHover={{ scale: 1.1 }}
+					whileTap={{ scale: 0.9 }}
+					style={getNavStyle(index)}
+					data-key={index}
+					key={index}
+				>
+					{cloneElement(element, {
+						onClick: null,
+					})}
+				</motion.div>
+			);
+		});
+	};
+	if (isMobile && showModal) {
+		return <Modal onClose={handleShowModal}>{getNavContent(true)}</Modal>;
+	} else {
+		return (
+			<>
+				<div ref={ref} className={className} style={{ justifyContent: align }}>
+					<div onClick={onNavHeaderClick} style={!isMobile ? getNavStyle() : {}}>
+						{title}
+					</div>
+					{isMobile ? (
+						<span className="closeBtn">
+							<Icon type="menu" onClick={handleShowModal} />
+						</span>
+					) : (
+						getNavContent()
+					)}
+				</div>
+				<style jsx>{`
 					div {
-						justify-content: space-between;
+						display: flex;
+						flex-direction: row;
 					}
-				}
-			`}</style>
-		</>
-	);
+
+					.closeBtn {
+						position: absolute;
+						top: ${s};
+						right: ${s};
+					}
+					@media only screen and (max-width: 600px) {
+						div {
+							justify-content: space-between;
+						}
+					}
+				`}</style>
+			</>
+		);
+	}
 });
 
 Navbar.propTypes = {

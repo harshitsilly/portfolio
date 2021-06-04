@@ -9,9 +9,9 @@ export default function Layout({ children, pageProps }) {
 	const isHeroHeader = router.asPath === '/' ? true : false;
 	return (
 		<>
-			<Box className={isHeroHeader ? styles.bg : null}>
+			<Box className={`app ${isHeroHeader ? styles.bg : null}`}>
 				<Box pad="l">
-					<Navbar title="Harshit Sinha" onTitleClick={() => router.push('/')} padH="35px" align="center" bold>
+					<Navbar title="Harshit Sinha" onTitleClick={() => !isHeroHeader && router.push('/')} padH="35px" align="center" bold>
 						{/* <Box>Resume</Box> */}
 						<Box onClick={() => router.push('snippets')}>Snippets</Box>
 						<Box onClick={() => window.open('https://battery941.wixsite.com/stockmaster')}>Blog</Box>

@@ -23,22 +23,21 @@ const Modal = forwardRef(({ title, className, onClose, style, ...props }, ref) =
 		// };
 	});
 
-	const container = document.getElementsByTagName('main')[0];
+	const container = document.getElementsByClassName('app')[0];
 
 	return (
 		<>
 			{container
 				? createPortal(
 						<>
-							<div ref={ref} className={className} style={style}>
+							<div ref={ref} className={`modal ${className}`} style={style}>
 								<span className="closeBtn">
 									<Icon type="close" onClick={onClose} />
 								</span>
-								{props.children}
+								<div className="content">{props.children}</div>
 							</div>
 							<style jsx>{`
-								div {
-									padding: 40px 10px;
+								.modal {
 									position: absolute;
 									height: 100vmax;
 									width: 100vmin;
@@ -47,6 +46,9 @@ const Modal = forwardRef(({ title, className, onClose, style, ...props }, ref) =
 									z-index: 1;
 									background-color: var(--background);
 									flex-direction: column;
+								}
+								.content {
+									padding: 2rem;
 								}
 								.closeBtn {
 									position: absolute;
