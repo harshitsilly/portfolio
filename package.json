@@ -10,6 +10,8 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^10.2.3",
     "@svgr/webpack": "^5.5.0",
     "framer-motion": "^4.1.17",
     "next": "^10.0.0",

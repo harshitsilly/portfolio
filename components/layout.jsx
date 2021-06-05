@@ -30,6 +30,7 @@ export default function Layout({ children, pageProps }) {
 				)}
 			</Box>
 			{children}
+			{/* <footer>Made with love.</footer> */}
 		</>
 	);
 }
