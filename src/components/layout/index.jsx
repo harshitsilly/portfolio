@@ -1,9 +1,8 @@
-import { memo } from 'React';
 import Header from './header';
 import Footer from './footer';
 import { React } from 'react';
 
-export default memo(function Layout({ children }) {
+export default function Layout({ children }) {
 	return (
 		<>
 			<Header />
@@ -11,4 +10,4 @@ export default memo(function Layout({ children }) {
 			<Footer />
 		</>
 	);
-});
+}

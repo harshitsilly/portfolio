@@ -67,19 +67,19 @@ const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align,
 		return props.children.map((element, index) => {
 			if (element.props.navUtils) {
 				return (
-					<div whileHover={{ scale: 1.1 }} style={getNavStyle()} data-key={index} key={index}>
+					<motion.div whileHover={{ scale: 1.1 }} style={getNavStyle()} data-key={index} key={index}>
 						{element}
-					</div>
+					</motion.div>
 				);
 			}
 			return (
-				<div
+				<motion.div
 					onClick={(e) => {
 						element.props.onClick();
 						onNavBarClick(e);
 					}}
-					// whileHover={{ scale: 1.1 }}
-					// whileTap={{ scale: 0.9 }}
+					whileHover={{ scale: 1.1 }}
+					whileTap={{ scale: 0.9 }}
 					style={getNavStyle(index)}
 					data-key={index}
 					key={index}
@@ -87,7 +87,7 @@ const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align,
 					{cloneElement(element, {
 						onClick: null,
 					})}
-				</div>
+				</motion.div>
 			);
 		});
 	};
