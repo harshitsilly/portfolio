@@ -1,0 +1,16 @@
+.bg {
+	background: linear-gradient(0deg, var(--color-homepage-dark), var(--color-homepage-light));
+	color: var(--color);
+}
+
+.footer {
+	background: linear-gradient(0deg, var(--color-homepage-dark), var(--color-homepage-light));
+
+	> div {
+		align-items: center;
+		> span,
+		div {
+			margin-top: 25px;
+		}
+	}
+}

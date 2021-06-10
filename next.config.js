@@ -1,18 +1,13 @@
-// const withMDX = require('@next/mdx')({
-//   extension: /\.mdx$/
-// })
+const withMDX = require('@next/mdx')()
 
-module.exports = {
-    webpack(config,options) {
+
+
+module.exports =  withMDX({
+    webpack(config) {
       config.module.rules.push({
         test: /\.svg$/,
         use: ["@svgr/webpack"]
       });
-      config.module.rules.push({
-        test: /\.mdx/,
-        use: ['@mdx-js/loader'],
-      })
-  
       return config;
     }
-  };
+  });

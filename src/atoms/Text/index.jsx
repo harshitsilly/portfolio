@@ -2,7 +2,7 @@ import { forwardRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as Constants from '../constants';
 
-const Box = forwardRef(({ className, style, header, ...props }, ref) => {
+const Text = forwardRef(({ className, style, header, bold, ...props }, ref) => {
 	useEffect(() => {
 		// window.addEventListener();
 		return () => {};
@@ -17,8 +17,8 @@ const Box = forwardRef(({ className, style, header, ...props }, ref) => {
 				<style jsx>{`
 					div {
 						text-align: center;
-						font-weight: ${props.bold ? 600 : 'auto'};
-						font-size: header;
+						font-weight: ${bold ? 600 : 'auto'};
+						font-size: ${header ? Constants.m : 'auto'};
 					}
 				`}</style>
 			</>
@@ -29,14 +29,20 @@ const Box = forwardRef(({ className, style, header, ...props }, ref) => {
 			<span ref={ref} className={className} style={style}>
 				{props.children}
 			</span>
+			<style jsx>{`
+				span {
+					text-align: center;
+					font-weight: ${bold ? 600 : 'auto'};
+				}
+			`}</style>
 		</>
 	);
 });
 
-Box.propTypes = {
+Text.propTypes = {
 	className: PropTypes.string,
 	header: PropTypes.boolean,
 	bold: PropTypes.boolean,
 };
 
-export default Box;
+export default Text;
