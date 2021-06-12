@@ -1,6 +1,6 @@
 import { Box, Text } from '../../atoms';
-import Avtar from '../Avtar';
-import styles from './index.module.scss';
+import Avtar from '../../components/Avtar';
+import styles from './intro.module.scss';
 
 const Intro = () => {
 	return (

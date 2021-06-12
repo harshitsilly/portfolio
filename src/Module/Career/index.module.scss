@@ -1,0 +1,15 @@
+.career {
+	border-right: 5px dotted var(--color-gray-700);
+}
+
+.listItemHeader {
+	&:before {
+		content: '• ';
+	}
+}
+.type {
+	padding: 10px 0;
+}
+.header {
+	padding-bottom: 10px;
+}

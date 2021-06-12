@@ -2,7 +2,7 @@ import { forwardRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as Constants from '../constants';
 
-const Text = forwardRef(({ className, style, header, bold, ...props }, ref) => {
+const Text = forwardRef(({ className, style, align, header, bold, ...props }, ref) => {
 	useEffect(() => {
 		// window.addEventListener();
 		return () => {};
@@ -16,7 +16,7 @@ const Text = forwardRef(({ className, style, header, bold, ...props }, ref) => {
 				</div>
 				<style jsx>{`
 					div {
-						text-align: center;
+						text-align: ${align ? align : 'center'};
 						font-weight: ${bold ? 600 : 'auto'};
 						font-size: ${header ? Constants.m : 'auto'};
 					}
@@ -31,7 +31,7 @@ const Text = forwardRef(({ className, style, header, bold, ...props }, ref) => {
 			</span>
 			<style jsx>{`
 				span {
-					text-align: center;
+					text-align: ${align ? align : 'center'};
 					font-weight: ${bold ? 600 : 'auto'};
 				}
 			`}</style>
@@ -41,6 +41,7 @@ const Text = forwardRef(({ className, style, header, bold, ...props }, ref) => {
 
 Text.propTypes = {
 	className: PropTypes.string,
+	align: PropTypes.string,
 	header: PropTypes.boolean,
 	bold: PropTypes.boolean,
 };

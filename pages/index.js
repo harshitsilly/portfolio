@@ -1,4 +1,4 @@
-import App from '../src/components/app';
+import Career from '../src/Module/Career';
 export default function Home() {
-	return <App />;
+	return <Career />;
 }

@@ -1,6 +1,6 @@
 import { Box, Navbar, Theme, Button } from '../../atoms';
 import { useRouter } from 'next/router';
-import Intro from '../Intro';
+import Intro from '../../Module/Intro/intro';
 import Curve from '../../svg/curve.svg';
 import styles from './index.module.scss';
 

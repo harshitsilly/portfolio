@@ -17,6 +17,7 @@ const Box = forwardRef(({ className, onClick, style, ...props }, ref) => {
 				div {
 					display: flex;
 					flex-direction: ${props.direction ?? 'column'};
+					flex-wrap: wrap;
 					padding: ${Constants[props.pad]};
 					width: ${props.width ?? 'auto'};
 				}

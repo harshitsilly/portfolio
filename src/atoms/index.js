@@ -5,5 +5,6 @@ import Icon from './Icon';
 import Modal from './Modal';
 import Theme from './Theme';
 import Button from './Button';
+import Card from './Card';
 
-export  {Box, Text, Navbar, Icon,Modal, Theme, Button};
+export { Box, Text, Navbar, Icon, Modal, Theme, Button, Card };
