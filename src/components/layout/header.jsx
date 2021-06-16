@@ -22,7 +22,7 @@ export default function Header({}) {
 					<Button
 						onClick={() =>
 							window.open(
-								'https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL2IvcyFBaGI4T19VM1lGMUloQzFOU20xZWd2Nzh4clZaP2U9dFMzeUda/root/content'
+								'https://s3.amazonaws.com/attachments.angel.co/5953381-0c718448ea74156b6d3a24c9d90cf26b.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJS6W3HGZGRJIRBTA%2F20210613%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210613T201411Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a2cbf328dbd670f792d7c493871e7269a2ab31d9a50532bb4b19148269297db3'
 							)
 						}
 						navUtils

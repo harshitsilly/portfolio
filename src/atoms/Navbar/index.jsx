@@ -15,7 +15,7 @@ const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align,
 	useEffect(() => {
 		// window.addEventListener();
 		function handleResize() {
-			if (window.innerWidth <= 600) {
+			if (window.outerWidth <= 600) {
 				setIsMobile(true);
 			} else {
 				setShowModal(false);

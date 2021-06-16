@@ -1,4 +1,4 @@
-import Sample from '../src/snippets/sample.mdx'
+import Projects from '../src/Module/Projects';
 export default function Home() {
-	return <Sample></Sample>;
+	return <Projects />;
 }

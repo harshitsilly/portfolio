@@ -1,5 +1,5 @@
 {
   "cssVariables.lookupFiles": [
-  "pages/css/index.css"
+  "pages/css/index.scss"
   ]
 }

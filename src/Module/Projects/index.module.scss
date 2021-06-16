@@ -1,0 +1,14 @@
+.card{
+    border: 2px solid var(--color-homepage-dark);
+    border-radius: 10px;
+    box-shadow: 2px 2px var(--color-success-background);
+    max-width: 400px;
+    margin: 15px;
+    >:first-child{
+        border-bottom: 2px solid var(--color-homepage-dark);
+    }
+    > div,span{
+        padding:15px;
+    }
+
+}

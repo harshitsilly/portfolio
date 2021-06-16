@@ -1,13 +1,14 @@
 import { Box, Text } from '../../atoms';
 import PE from './type';
+import Skills from './skills';
 import { data } from './data';
 import styles from './index.module.scss';
 
 const Work = () => {
 	return (
 		<>
-			<Box pad="xxl" direction="row">
-				<Box className={styles.career} pad="l" style={{ width: '60%' }}>
+			<Box pad="xxl">
+				<Box pad="l">
 					<Text bold header align="left">
 						Career Highlights
 					</Text>
@@ -15,11 +16,12 @@ const Work = () => {
 						<PE {...element} key={index} />
 					))}
 				</Box>
-
-				<Box pad="l" style={{ width: '30%' }}>
-					<Text bold header>
+				{/* <Box className={styles.border} /> */}
+				<Box pad="l">
+					<Text bold header align="left">
 						Skills
 					</Text>
+					<Skills />
 				</Box>
 			</Box>
 		</>
