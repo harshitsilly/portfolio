@@ -16,6 +16,15 @@ const Avtar = forwardRef(({ className, src, style, onClick }, ref) => {
 			<style jsx>{`
 				img {
 					height: 232px;
+					display: block;
+					margin: 0 auto;
+				}
+				@media only screen and (max-width: 600px) {
+					img {
+						justify-content: space-between;
+						align-items: center;
+						padding-bottom: 30px;
+					}
 				}
 			`}</style>
 		</>

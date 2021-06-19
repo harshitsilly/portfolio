@@ -1,11 +1,13 @@
 import { Box, Text } from '../../atoms';
 import Avtar from '../../components/Avtar';
 import styles from './intro.module.scss';
+import useIsMobile from '../../utils/useIsMobile';
 
 const Intro = () => {
+	const isMobile = useIsMobile();
 	return (
 		<>
-			<Box pad="xl">
+			<Box pad={isMobile ? 's' : 'xl'}>
 				<Box direction="row" mdirection="col" pad="l">
 					<Box width="40%">
 						<Avtar src="https://www.joshwcomeau.com/_next/static/media/me-light-705eebe4935835b21ad0fcd73365775d.webp"></Avtar>
@@ -16,7 +18,6 @@ const Intro = () => {
 						latest technological solutions and their role in transforming web.
 					</Box>
 				</Box>
-				{/* <iframe src="https://stackblitz.com/edit/error-boundarybox?embed=1&file=index.js&hideNavigation=1&view=editor"></iframe> */}
 			</Box>
 		</>
 	);

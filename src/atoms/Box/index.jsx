@@ -26,6 +26,7 @@ const Box = forwardRef(({ className, onClick, style, ...props }, ref) => {
 				@media only screen and (max-width: 600px) {
 					div {
 						flex-direction: ${props.mDirection ?? 'column'};
+						width: auto;
 					}
 				}
 			`}</style>
