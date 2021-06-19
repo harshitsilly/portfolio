@@ -6,7 +6,7 @@ export default function Footer({}) {
 	return (
 		<>
 			<Box className={styles.footer}>
-				<Curve style={{ transform: 'rotate(180deg)', width: '100vw', fill: 'var(--color-background)' }}></Curve>
+				<Curve style={{ transform: 'rotate(180deg)', width: '100%', fill: 'var(--color-background)' }}></Curve>
 				<Box pad="l">
 					<Text bold header>
 						Interesting in hiring me or just want to catch up?

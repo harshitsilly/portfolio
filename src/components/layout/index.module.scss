@@ -4,6 +4,7 @@
 }
 
 .footer {
+	overflow: hidden;
 	background: linear-gradient(0deg, var(--color-homepage-dark), var(--color-homepage-light));
 
 	> div {

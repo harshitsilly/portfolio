@@ -14,7 +14,7 @@ const Icon = forwardRef(({ className, onClick, style, type, ...props }, ref) => 
 	return (
 		<>
 			<span onClick={onClick} ref={ref} className={className} style={{ ...style, fill: 'var(--color-text)' }}>
-				<DynamicComponent type={type} />
+				<DynamicComponent />
 			</span>
 			<style jsx>{`
 				span {
@@ -24,8 +24,6 @@ const Icon = forwardRef(({ className, onClick, style, type, ...props }, ref) => 
 				svg {
 					height: ${m};
 					width: ${m};
-					stroke: var(--color);
-					fill: var(--color);
 				}
 			`}</style>
 		</>
