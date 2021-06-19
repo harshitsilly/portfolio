@@ -20,6 +20,7 @@ const Box = forwardRef(({ className, onClick, style, ...props }, ref) => {
 					flex-wrap: wrap;
 					padding: ${Constants[props.pad]};
 					width: ${props.width ?? 'auto'};
+					cursor: ${onClick ? 'pointer' : 'inherit'};
 				}
 
 				@media only screen and (max-width: 600px) {

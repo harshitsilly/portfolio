@@ -12,9 +12,9 @@ export default function Header({}) {
 			<Box pad="l">
 				<Navbar title="Harshit Sinha" onTitleClick={() => !isHeroHeader && router.push('/')} padH="35px" align="center" bold>
 					{/* <Box>Resume</Box> */}
-					<Box onClick={() => router.push('projects')}>Projects</Box>
-					<Box onClick={() => router.push('snippets')}>Snippets</Box>
-					<Box onClick={() => window.open('https://battery941.wixsite.com/stockmaster')}>Blog</Box>
+					<Box onClick={() => router.push('/projects')}>Projects</Box>
+					<Box onClick={() => router.push('/snippets')}>Snippets</Box>
+					<Box onClick={() => router.push('/blog')}>Blog</Box>
 					{/* <Box onClick={() => router.push('snippets')}>StoryBoard</Box> */}
 
 					<Theme navUtils />

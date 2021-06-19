@@ -1,5 +1,5 @@
-import Snippets from '../src/snippets';
+import Sample from '../src/snippets/sample.mdx';
 
 export default function Home() {
-	return <Snippets />;
+	return <Sample />;
 }
