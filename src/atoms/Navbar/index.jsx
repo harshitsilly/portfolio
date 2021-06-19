@@ -4,6 +4,7 @@ import Modal from '../Modal';
 import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
 import { s } from '../constants';
+import Text from './../Text/index';
 
 let selectedNavItem;
 
@@ -98,7 +99,7 @@ const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align,
 			<>
 				<div ref={ref} className={className} style={{ justifyContent: align }}>
 					<div onClick={onNavHeaderClick} style={!isMobile ? getNavStyle() : {}}>
-						{title}
+						<Text bold>{title}</Text>
 					</div>
 					{isMobile ? (
 						<span className="closeBtn">

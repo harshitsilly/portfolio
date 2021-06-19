@@ -12,7 +12,7 @@ export default function Footer({}) {
 						Interesting in hiring me or just want to catch up?
 					</Text>
 					<Text>Drop me a line at harshit886@outlook.com or grab 30 mins to hop on a call with me</Text>
-					<Button text="Let's talk one-on-one!" onClick={() => alert('calendarly integration soon')}></Button>
+					<Button text="Let's talk one-on-one!" onClick={() => window.open('https://calendly.com/harshit886/30min')}></Button>
 				</Box>
 			</Box>
 		</>
