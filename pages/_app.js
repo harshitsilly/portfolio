@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
 		router.events.on('routeChangeComplete', () =>
 			setTimeout(() => {
 				setAppLoader(false);
-			}, 800)
+			}, 500)
 		);
 		router.events.on('routeChangeError', () =>
 			setTimeout(() => {

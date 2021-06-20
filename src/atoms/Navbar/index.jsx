@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
 import { s } from '../constants';
 import Text from './../Text/index';
+import Badge from './../Badge/index';
 
 let selectedNavItem;
 
-const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align, bold, ...props }, ref) => {
+const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align, bold, badgeUrl, ...props }, ref) => {
 	const [isMobile, setIsMobile] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 	const selectedKey = useRef(null);
@@ -99,6 +100,7 @@ const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align,
 			<>
 				<div ref={ref} className={className} style={{ justifyContent: align }}>
 					<div onClick={onNavHeaderClick} style={!isMobile ? getNavStyle() : {}}>
+						{badgeUrl && <Badge url={badgeUrl} style={{ marginRight: '20px' }} />}
 						<Text bold>{title}</Text>
 					</div>
 					{isMobile ? (

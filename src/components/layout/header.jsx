@@ -10,7 +10,14 @@ export default function Header({}) {
 	return (
 		<Box className={`app ${isHeroHeader ? styles.bg : null}`}>
 			<Box pad="l">
-				<Navbar title="Harshit Sinha" onTitleClick={() => !isHeroHeader && router.push('/')} padH="35px" align="center" bold>
+				<Navbar
+					title="Harshit Sinha"
+					onTitleClick={() => !isHeroHeader && router.push('/')}
+					padH="35px"
+					align="center"
+					bold
+					badgeUrl="https://lh3.googleusercontent.com/a-/AOh14GjrmAiuLXnp-zwzoHuJ0JFwNqwIq3FM4Qu7SMr1-w%3Ds96-c"
+				>
 					{/* <Box>Resume</Box> */}
 					<Box onClick={() => router.push('/projects')}>Projects</Box>
 					<Box onClick={() => router.push('/snippets')}>Snippets</Box>

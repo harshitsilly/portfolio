@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { Box, Text } from '../../atoms';
 import styles from './index.module.scss';
 import useIsMobile from '../../utils/useIsMobile';
+import BlogItemHeader from './BlogItemHeader';
 
-const BlogItem = ({ header, imageUrl }) => {
+const BlogItem = ({ header, imageUrl, ...props }) => {
 	const isMobile = useIsMobile();
 	useEffect(async () => {}, []);
 	return (
@@ -12,12 +13,16 @@ const BlogItem = ({ header, imageUrl }) => {
 				style={{
 					backgroundImage: `url(${imageUrl})`,
 					backgroundSize: 'cover',
+					backgroundPosition: 'center',
 				}}
 			></Box>
-			<Box pad={isMobile ? 'xs' : 'm'} style={{ justifyContent: 'center' }}>
-				<Text header={!isMobile} bold>
-					{header}
-				</Text>
+			<Box pad={isMobile ? 'xs' : 'm'} style={{ justifyContent: 'flex-start' }}>
+				<BlogItemHeader {...props} />
+				<Box style={isMobile ? { marginTop: '10px' } : { marginTop: '40px' }}>
+					<Text header={!isMobile} bold align="left">
+						{header}
+					</Text>
+				</Box>
 			</Box>
 		</Box>
 	);

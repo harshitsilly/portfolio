@@ -23,14 +23,16 @@ const Projects = () => {
 		router.push(tag);
 	};
 	return (
-		<Box className={styles.blog}>
-			<Box className={styles.tag} direction="row" mDirection="row">
-				{availableTags.map((element) => (
-					<Tag onChangeTag={onChangeTag} selected={selectedTag?.toLowerCase() === element.toLowerCase()} tag={element} />
-				))}
-			</Box>
-			<BlogList tag={selectedTag} />
-		</Box>
+		<div className={styles.blog}>
+			<div className={styles.blogContainer}>
+				<Box className={styles.tag} direction="row" mDirection="row">
+					{availableTags.map((element) => (
+						<Tag onChangeTag={onChangeTag} selected={selectedTag?.toLowerCase() === element.toLowerCase()} tag={element} />
+					))}
+				</Box>
+				<BlogList tag={selectedTag} />
+			</div>
+		</div>
 	);
 };
 

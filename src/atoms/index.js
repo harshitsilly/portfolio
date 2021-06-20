@@ -5,6 +5,7 @@ import Icon from './Icon';
 import Modal from './Modal';
 import Theme from './Theme';
 import Button from './Button';
-import Loader from './Loader/index';
+import Loader from './Loader';
+import Badge from './Badge';
 
-export { Box, Text, Navbar, Icon, Modal, Theme, Button, Loader };
+export { Box, Text, Navbar, Icon, Modal, Theme, Button, Loader, Badge };
