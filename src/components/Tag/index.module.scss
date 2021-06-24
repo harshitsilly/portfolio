@@ -1,0 +1,12 @@
+.tag {
+	> div {
+		padding: 0 15px;
+		font-weight: 600;
+
+		opacity: 0.75;
+	}
+}
+
+.tagSelected {
+	opacity: 1 !important;
+}

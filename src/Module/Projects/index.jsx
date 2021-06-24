@@ -1,34 +1,38 @@
 import { useEffect, useState } from 'react';
 import { Box, Text } from '../../atoms';
 import styles from './index.module.scss';
+import ProjectItem from './ProjectItem';
+import { data } from './data';
+import Tag from './../../components/Tag';
+import { useRouter } from 'next/router';
 
+const availableTags = ['Open Source', 'Upcoming', 'Sample'];
 const Projects = () => {
-	const [response, setResponse] = useState(null);
+	const router = useRouter();
+	const { tag } = router.query;
+	const [selectedTag, setSelectedTag] = useState(availableTags[0]);
 	useEffect(async () => {
-		let response = await fetch('https://api.github.com/repos/imjsElectron/electron-differential-updater');
-		response = await response.json();
-		console.log(response);
-		setResponse(response);
-	}, []);
-	return (
-		<>
-			<Box pad="xl">
-				<Box className={styles.card}>
-					<Text bold>Electron Differential Updater</Text>
+		if (tag && tag[0]) {
+			setSelectedTag(tag[0]);
+		} else {
+			setSelectedTag(availableTags[0]);
+		}
+	}, [tag]);
+	const onChangeTag = (tag) => {
+		setSelectedTag(tag);
+		router.push(tag);
+	};
 
-					<Text>
-						Differential updater for Mac. Minimise your update download by upto 95%. Preserve code signature and integrity.
-					</Text>
-					<Box direction="row" mDirection="row">
-						<a href="https://npmjs.org/package/@imjs/electron-differential-updater" target="_blank">
-							<img src="https://img.shields.io/npm/dm/@imjs/electron-differential-updater.svg" />
-						</a>
-						<a href="https://github.com/imjsElectron/electron-differential-updater" target="_blank"></a>
-						{response?.stargazers_count}
-					</Box>
-				</Box>
+	return (
+		<Box>
+			<Tag className={styles.projectTag} onChangeTag={onChangeTag} data={availableTags} selectedTag={selectedTag} />
+
+			<Box direction="row" className={styles.projectItemList} style={{ justifyContent: 'space-around' }}>
+				{data.map((element) => (
+					<ProjectItem {...element} />
+				))}
 			</Box>
-		</>
+		</Box>
 	);
 };
 

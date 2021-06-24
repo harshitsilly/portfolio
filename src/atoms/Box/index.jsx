@@ -2,12 +2,27 @@ import { forwardRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as Constants from '../constants';
 
-const Box = forwardRef(({ className, onClick, style, ...props }, ref) => {
+const Box = forwardRef(({ className, onClick, style, block, ...props }, ref) => {
 	useEffect(() => {
 		// window.addEventListener();
 		return () => {};
 	});
 
+	if (block) {
+		return (
+			<>
+				<div ref={ref} onClick={onClick} className={className} style={style}>
+					{props.children}
+				</div>
+				<style jsx>{`
+					div {
+						padding: ${Constants[props.pad]};
+						cursor: ${onClick ? 'pointer' : 'inherit'};
+					}
+				`}</style>
+			</>
+		);
+	}
 	return (
 		<>
 			<div ref={ref} onClick={onClick} className={className} style={style}>

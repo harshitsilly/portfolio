@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Box, Text } from '../../atoms';
 import styles from './index.module.scss';
-import Tag from './tag';
+import Tag from '../../components/Tag';
 import BlogList from './BlogList';
 
 const availableTags = ['All', 'water', 'ev'];
@@ -25,11 +25,8 @@ const Projects = () => {
 	return (
 		<div className={styles.blog}>
 			<div className={styles.blogContainer}>
-				<Box className={styles.tag} direction="row" mDirection="row">
-					{availableTags.map((element) => (
-						<Tag onChangeTag={onChangeTag} selected={selectedTag?.toLowerCase() === element.toLowerCase()} tag={element} />
-					))}
-				</Box>
+				<Tag onChangeTag={onChangeTag} data={availableTags} selectedTag={selectedTag} />
+
 				<BlogList tag={selectedTag} />
 			</div>
 		</div>

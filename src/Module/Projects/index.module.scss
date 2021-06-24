@@ -1,14 +1,39 @@
-.card{
-    border: 2px solid var(--color-homepage-dark);
-    border-radius: 10px;
-    box-shadow: 2px 2px var(--color-success-background);
-    max-width: 400px;
-    margin: 15px;
-    >:first-child{
-        border-bottom: 2px solid var(--color-homepage-dark);
-    }
-    > div,span{
-        padding:15px;
-    }
+.projectTag {
+	padding: 10px 20px;
+}
+.projectItemList {
+	margin: 40px 0;
+	background: var(--color-gray-100);
+}
 
+.card {
+	max-width: 400px;
+	margin: 35px 10px;
+	> :first-child {
+		border-radius: 10px;
+	}
+	> :last-child {
+		margin-top: 20px;
+	}
+}
+.subHeader {
+	margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+	.projectNav {
+		background: transparent;
+	}
+
+	.card {
+		margin: 20px;
+
+		> :last-child {
+			margin-top: 10px;
+		}
+	}
+
+	.subHeader {
+		margin-top: 10px;
+	}
 }
