@@ -1,11 +1,11 @@
 export const getBaseUrl = () => {
-	if (window) {
+	if (process.browser) {
 		return window.location.origin;
 	}
 };
 
 export const setUrl = (param, query) => {
-	if (window) {
+	if (process.browser) {
 		if (query) {
 			return `${window.location.origin}/${param}?${query}`;
 		}
