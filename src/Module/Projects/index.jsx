@@ -6,7 +6,7 @@ import { data } from './data';
 import Tag from './../../components/Tag';
 import { useRouter } from 'next/router';
 
-const availableTags = ['Open Source', 'Upcoming', 'Sample'];
+const availableTags = ['All', 'Open Source', 'Showcase'];
 const Projects = () => {
 	const router = useRouter();
 	const { tag } = router.query;
@@ -23,14 +23,26 @@ const Projects = () => {
 		router.push(tag);
 	};
 
+	if (!selectedTag) {
+		return;
+	}
 	return (
 		<Box>
 			<Tag className={styles.projectTag} onChangeTag={onChangeTag} data={availableTags} selectedTag={selectedTag} />
 
 			<Box direction="row" className={styles.projectItemList} style={{ justifyContent: 'space-around' }}>
-				{data.map((element) => (
-					<ProjectItem {...element} />
-				))}
+				{data
+					.filter(({ type }) => {
+						const tag = selectedTag.toLowerCase();
+						if (tag === 'all') {
+							return true;
+						} else {
+							return tag === type?.toLowerCase();
+						}
+					})
+					.map((element) => (
+						<ProjectItem {...element} />
+					))}
 			</Box>
 		</Box>
 	);

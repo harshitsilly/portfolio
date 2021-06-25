@@ -7,16 +7,25 @@ export const data = [
 		detail:
 			'Open Source differential updater for Mac build on top of electron-builder. Minimise your update download by upto 95%. Preserve code signature and integrity.',
 		imgUrl: setUrl('updater.png'),
+		type: 'open source',
 	},
 	{
 		header: 'React UI Library',
 		subDetail: 'Welcome to modern React components',
 		imgUrl: setUrl('react.png'),
+		type: 'open source',
 	},
 	{
 		header: 'Contributions',
 		subDetail: 'Open Source contributions to other projects',
 		imgUrl: setUrl('react.png'),
+		type: 'open source',
+	},
+	{
+		header: 'SellTicket',
+		subDetail: 'Buy/Resale ticket from one place.',
+		imgUrl: setUrl('images/sellticket/sellticket5.png'),
+		type: 'showcase',
 	},
 ];
 

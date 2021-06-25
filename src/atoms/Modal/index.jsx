@@ -4,24 +4,8 @@ import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
 import { s } from '../constants';
 
-const Modal = forwardRef(({ title, className, onClose, style, ...props }, ref) => {
-	const [showModal, setShowModal] = useState(false);
-	useEffect(() => {
-		// window.addEventListener();
-		// function handleResize() {
-		// 	if (window.innerWidth <= 600) {
-		// 		setIsModal(true);
-		// 	} else {
-		// 		setIsModal(false);
-		// 		setShowModal(false);
-		// 	}
-		// }
-		// handleResize();
-		// window.addEventListener('resize', handleResize);
-		// return () => {
-		// 	window.removeEventListener('resize', handleResize);
-		// };
-	});
+const Modal = forwardRef(({ title, className, onClose, style, bgColor, ...props }, ref) => {
+	useEffect(() => {});
 
 	const container = document.getElementsByClassName('app')[0];
 
@@ -39,13 +23,14 @@ const Modal = forwardRef(({ title, className, onClose, style, ...props }, ref) =
 							<style jsx>{`
 								.modal {
 									position: absolute;
-									height: 100vmax;
-									width: 100vmin;
-									top: 0;
-									right: 0;
+									height: 94vh;
+									width: 60vw;
+									min-width: 800px;
+									left: 50%;
+									top: 50%;
+									transform: translate(-50%, -50%);
 									z-index: 1;
-									background-color: var(--background);
-									flex-direction: column;
+									background-color: ${bgColor ? bgColor : 'var(--background)'};
 								}
 								.content {
 									padding: 2rem;
@@ -54,6 +39,19 @@ const Modal = forwardRef(({ title, className, onClose, style, ...props }, ref) =
 									position: absolute;
 									top: ${s};
 									right: ${s};
+								}
+								@media only screen and (max-width: 600px) {
+									.modal {
+										position: absolute;
+										height: 100vmax;
+										width: 100vmin;
+										min-width: auto;
+										top: 0;
+										left: 0;
+										transform: none;
+										z-index: 1;
+										background-color: var(--background);
+									}
 								}
 							`}</style>
 						</>,

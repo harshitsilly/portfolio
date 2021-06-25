@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Layout pageProps style={appLoader ? { visibility: 'hidden' } : {}}>
+			<Layout pageProps style={appLoader ? { visibility: 'hidden' } : { height: '100vh', overflowY: 'scroll', overflowX: 'hidden' }}>
 				<Component {...pageProps}></Component>
 			</Layout>
 			{appLoader && <Loader />}
