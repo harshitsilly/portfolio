@@ -6,19 +6,19 @@ export const data = [
 		subDetail: 'Save download time and update size by upto 95%.',
 		detail:
 			'Open Source differential updater for Mac build on top of electron-builder. Minimise your update download by upto 95%. Preserve code signature and integrity.',
-		imgUrl: setUrl('updater.png'),
+		imgUrl: setUrl('images/updater.png'),
 		type: 'open source',
 	},
 	{
 		header: 'React UI Library',
 		subDetail: 'Welcome to modern React components',
-		imgUrl: setUrl('react.png'),
+		imgUrl: setUrl('images/react.png'),
 		type: 'open source',
 	},
 	{
 		header: 'Contributions',
 		subDetail: 'Open Source contributions to other projects',
-		imgUrl: setUrl('react.png'),
+		imgUrl: setUrl('images/openSource.png'),
 		type: 'open source',
 	},
 	{
@@ -26,6 +26,13 @@ export const data = [
 		subDetail: 'Buy/Resale ticket from one place.',
 		imgUrl: setUrl('images/sellticket/sellticket5.png'),
 		type: 'showcase',
+		images: [
+			'images/sellticket/sellticket.png',
+			'images/sellticket/sellticket1.png',
+			'images/sellticket/sellticket2.png',
+			'images/sellticket/sellticket3.png',
+			'images/sellticket/sellticket4.png',
+		],
 	},
 ];
 

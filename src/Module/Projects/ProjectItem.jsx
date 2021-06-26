@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Box, Text, Modal } from '../../atoms';
+import { Box, Text, Modal, Carousel } from '../../atoms';
 import { setUrl } from '../../utils';
 import useIsMobile from '../../utils/useIsMobile';
 import styles from './index.module.scss';
 
-const ProjectItem = ({ header, subDetail, imgUrl }) => {
+const ProjectItem = ({ header, subDetail, imgUrl, images }) => {
 	const [showModal, setShowModal] = useState(false);
 	useEffect(async () => {}, []);
 	const handleOpenModal = useCallback((event) => {
@@ -13,7 +13,24 @@ const ProjectItem = ({ header, subDetail, imgUrl }) => {
 	const isMobile = useIsMobile();
 	return (
 		<>
-			{showModal && <Modal onClose={() => setShowModal(false)}>test data</Modal>}
+			{showModal && (
+				<Modal onClose={() => setShowModal(false)}>
+					<Box pad={isMobile ? '' : 'm'} direction="row" style={{ justifyContent: 'space-between' }}>
+						<Text bold header align="left">
+							{header}
+						</Text>
+						{Array.isArray(images) && (
+							<Carousel style={isMobile ? {} : { width: '350px' }}>
+								{images?.map((url) => (
+									<Box>
+										<img style={{ height: '260px' }} src={setUrl(url)} />
+									</Box>
+								))}
+							</Carousel>
+						)}
+					</Box>
+				</Modal>
+			)}
 			<Box className={styles.card} onClick={handleOpenModal}>
 				<Box
 					style={{

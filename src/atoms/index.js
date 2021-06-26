@@ -7,5 +7,6 @@ import Theme from './Theme';
 import Button from './Button';
 import Loader from './Loader';
 import Badge from './Badge';
+import Carousel from './Carousel';
 
-export { Box, Text, Navbar, Icon, Modal, Theme, Button, Loader, Badge };
+export { Box, Text, Navbar, Icon, Modal, Theme, Button, Loader, Badge, Carousel };

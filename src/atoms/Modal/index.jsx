@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useState, cloneElement } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
-import { s } from '../constants';
+import { s, m } from '../constants';
 
 const Modal = forwardRef(({ title, className, onClose, style, bgColor, ...props }, ref) => {
 	useEffect(() => {});
@@ -31,14 +31,15 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, ...props 
 									transform: translate(-50%, -50%);
 									z-index: 1;
 									background-color: ${bgColor ? bgColor : 'var(--background)'};
+									border-radius: 20px;
 								}
 								.content {
 									padding: 2rem;
 								}
 								.closeBtn {
 									position: absolute;
-									top: ${s};
-									right: ${s};
+									top: ${m};
+									right: ${m};
 								}
 								@media only screen and (max-width: 600px) {
 									.modal {
@@ -51,6 +52,7 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, ...props 
 										transform: none;
 										z-index: 1;
 										background-color: var(--background);
+										border-radius: 0px;
 									}
 								}
 							`}</style>
