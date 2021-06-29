@@ -8,5 +8,6 @@ import Button from './Button';
 import Loader from './Loader';
 import Badge from './Badge';
 import Carousel from './Carousel';
+import Label from './Label';
 
-export { Box, Text, Navbar, Icon, Modal, Theme, Button, Loader, Badge, Carousel };
+export { Box, Text, Navbar, Icon, Modal, Theme, Button, Loader, Badge, Carousel, Label };

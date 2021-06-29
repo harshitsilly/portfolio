@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Box, Text } from '../../atoms';
+import { Box, Loader } from '../../atoms';
 import styles from './index.module.scss';
 import ProjectItem from './ProjectItem';
 import { data } from './data';
@@ -8,9 +8,10 @@ import { useRouter } from 'next/router';
 
 const availableTags = ['All', 'Open Source', 'Showcase'];
 const Projects = () => {
+	console.log('data', data);
 	const router = useRouter();
 	const { tag } = router.query;
-	const [selectedTag, setSelectedTag] = useState(availableTags[0]);
+	const [selectedTag, setSelectedTag] = useState(null);
 	useEffect(async () => {
 		if (tag && tag[0]) {
 			setSelectedTag(tag[0]);
@@ -24,7 +25,7 @@ const Projects = () => {
 	};
 
 	if (!selectedTag) {
-		return;
+		return <Loader />;
 	}
 	return (
 		<Box>

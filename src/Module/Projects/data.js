@@ -1,4 +1,5 @@
 import { setUrl } from '../../utils';
+import SellTicket from './data/sellTicket.mdx';
 
 export const data = [
 	{
@@ -14,6 +15,7 @@ export const data = [
 		subDetail: 'Welcome to modern React components',
 		imgUrl: setUrl('images/react.png'),
 		type: 'open source',
+		tag: 'upcoming',
 	},
 	{
 		header: 'Contributions',
@@ -33,6 +35,8 @@ export const data = [
 			'images/sellticket/sellticket3.png',
 			'images/sellticket/sellticket4.png',
 		],
+		website: 'https://sell--ticket.herokuapp.com/',
+		content: <SellTicket />,
 	},
 ];
 

@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Box, Text, Modal, Carousel } from '../../atoms';
+import { Box, Text, Modal, Carousel, Label } from '../../atoms';
 import { setUrl } from '../../utils';
 import useIsMobile from '../../utils/useIsMobile';
 import styles from './index.module.scss';
 
-const ProjectItem = ({ header, subDetail, imgUrl, images }) => {
+const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, website }) => {
 	const [showModal, setShowModal] = useState(false);
 	useEffect(async () => {}, []);
 	const handleOpenModal = useCallback((event) => {
@@ -15,12 +15,22 @@ const ProjectItem = ({ header, subDetail, imgUrl, images }) => {
 		<>
 			{showModal && (
 				<Modal onClose={() => setShowModal(false)}>
-					<Box pad={isMobile ? '' : 'm'} direction="row" style={{ justifyContent: 'space-between' }}>
-						<Text bold header align="left">
-							{header}
-						</Text>
+					<Box pad={isMobile ? '' : 'm'}>
+						<Box direction="row" mDirection="row">
+							<Text bold header align="left" style={{ paddingRight: '20px' }}>
+								{header}
+							</Text>
+							<Box direction="row" mDirection="row">
+								{/* <a href={website} style={{ marginRight: '10px' }}>
+									website
+								</a> */}
+								<Label size="13px" type="info" text={type} style={{ marginRight: '10px' }} />
+								{tag && <Label size="13px" type="secondary" text={tag} />}
+							</Box>
+						</Box>
+
 						{Array.isArray(images) && (
-							<Carousel style={isMobile ? {} : { width: '350px' }}>
+							<Carousel style={isMobile ? {} : { width: '350px', position: 'absolute', right: 20 }}>
 								{images?.map((url) => (
 									<Box>
 										<img style={{ height: '260px' }} src={setUrl(url)} />
@@ -28,19 +38,19 @@ const ProjectItem = ({ header, subDetail, imgUrl, images }) => {
 								))}
 							</Carousel>
 						)}
+						{content}
 					</Box>
 				</Modal>
 			)}
 			<Box className={styles.card} onClick={handleOpenModal}>
 				<Box
 					style={{
-						background: `url(${imgUrl})`,
+						background: `url(${imgUrl}) center center / cover`,
 						height: '250px',
 						width: `${isMobile ? '320px' : '380px'}`,
-						backgroundSize: 'cover',
-						backgroundPosition: 'center',
 					}}
 				></Box>
+				{tag && <Label className={styles.cardLabel} type="secondary" text={tag} />}
 				<Box>
 					<Text bold header>
 						{header}

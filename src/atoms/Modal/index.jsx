@@ -54,6 +54,11 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, ...props 
 										background-color: var(--background);
 										border-radius: 0px;
 									}
+									.content {
+										padding: 2rem;
+										overflow-y: scroll;
+										height: 100vh;
+									}
 								}
 							`}</style>
 						</>,

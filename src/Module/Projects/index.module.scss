@@ -9,12 +9,18 @@
 .card {
 	max-width: 400px;
 	margin: 35px 10px;
+	position: relative;
 	> :first-child {
 		border-radius: 10px;
 	}
 	> :last-child {
 		margin-top: 20px;
 	}
+}
+.cardLabel {
+	position: absolute;
+	top: -2px;
+	right: -2px;
 }
 .subHeader {
 	margin-top: 20px;
