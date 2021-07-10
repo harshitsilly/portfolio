@@ -3,8 +3,9 @@ import { Box, Text, Modal, Carousel, Label } from '../../atoms';
 import { setUrl } from '../../utils';
 import useIsMobile from '../../utils/useIsMobile';
 import styles from './index.module.scss';
+import Icon from './../../atoms/Icon/index';
 
-const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, website }) => {
+const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, link, github, npm }) => {
 	const [showModal, setShowModal] = useState(false);
 	useEffect(async () => {}, []);
 	const handleOpenModal = useCallback((event) => {
@@ -20,12 +21,16 @@ const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, we
 							<Text bold header align="left" style={{ paddingRight: '20px' }}>
 								{header}
 							</Text>
-							<Box direction="row" mDirection="row">
-								{/* <a href={website} style={{ marginRight: '10px' }}>
-									website
-								</a> */}
+							<Box direction="row" mDirection="row" style={{ alignItems: 'center' }}>
 								<Label size="13px" type="info" text={type} style={{ marginRight: '10px' }} />
-								{tag && <Label size="13px" type="secondary" text={tag} />}
+								{tag && <Label size="13px" type="secondary" text={tag} style={{ marginRight: '10px' }} />}
+								{npm && (
+									<a href={npm.link} style={{ marginRight: '10px' }} target="_blank">
+										<img src={npm.img} />
+									</a>
+								)}
+								{github && <Icon type="github" style={{ marginRight: '10px' }} onClick={() => window.open(github)} />}
+								{link && <Icon type="link" onClick={() => window.open(link)} />}
 							</Box>
 						</Box>
 
@@ -38,7 +43,7 @@ const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, we
 								))}
 							</Carousel>
 						)}
-						{content}
+						<Box style={images && (isMobile ? {} : { maxWidth: '350px' })}>{content}</Box>
 					</Box>
 				</Modal>
 			)}

@@ -1,5 +1,6 @@
 import { setUrl } from '../../utils';
 import SellTicket from './data/sellTicket.mdx';
+import EDU from './data/EDU.mdx';
 
 export const data = [
 	{
@@ -9,6 +10,12 @@ export const data = [
 			'Open Source differential updater for Mac build on top of electron-builder. Minimise your update download by upto 95%. Preserve code signature and integrity.',
 		imgUrl: setUrl('images/updater.png'),
 		type: 'open source',
+		npm: {
+			link: 'https://imjselectron.github.io/electron-differential-updater/#/',
+			img: 'https://img.shields.io/npm/dm/@imjs/electron-differential-updater.svg',
+		},
+		github: 'https://github.com/imjsElectron/electron-differential-updater',
+		content: <EDU />,
 	},
 	{
 		header: 'React UI Library',
@@ -35,7 +42,8 @@ export const data = [
 			'images/sellticket/sellticket3.png',
 			'images/sellticket/sellticket4.png',
 		],
-		website: 'https://sell--ticket.herokuapp.com/',
+		link: 'https://sell--ticket.herokuapp.com/',
+		github: 'https://github.com/harshitsilly/sell-ticket',
 		content: <SellTicket />,
 	},
 ];
