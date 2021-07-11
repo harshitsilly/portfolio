@@ -15,7 +15,7 @@ const Intro = () => {
 					<Box width="60%">
 						Creative, entrepreneurial and innovative developer who drove tremendous cost savings and became trusted employee for
 						high-profile projects. A team player and an effective leader in different business environments. Interested in
-						latest technological solutions and their role in transforming web.
+						latest technological solutions and their role in transforming web and economy.
 					</Box>
 				</Box>
 			</Box>

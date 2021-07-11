@@ -1,6 +1,7 @@
 import { setUrl } from '../../utils';
 import SellTicket from './data/sellTicket.mdx';
 import EDU from './data/EDU.mdx';
+import Contributions from './data/contributions.mdx';
 
 export const data = [
 	{
@@ -29,6 +30,7 @@ export const data = [
 		subDetail: 'Open Source contributions to other projects',
 		imgUrl: setUrl('images/openSource.png'),
 		type: 'open source',
+		content: <Contributions />,
 	},
 	{
 		header: 'SellTicket',

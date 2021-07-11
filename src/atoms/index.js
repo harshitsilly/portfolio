@@ -9,5 +9,6 @@ import Loader from './Loader';
 import Badge from './Badge';
 import Carousel from './Carousel';
 import Label from './Label';
+import Link from './Link';
 
-export { Box, Text, Navbar, Icon, Modal, Theme, Button, Loader, Badge, Carousel, Label };
+export { Box, Text, Navbar, Icon, Modal, Theme, Button, Loader, Badge, Carousel, Label, Link };

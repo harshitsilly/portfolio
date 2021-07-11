@@ -2,7 +2,7 @@ import { forwardRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { xxs } from './../constants';
 
-const Label = forwardRef(({ className, text, style, size, type, ...props }, ref) => {
+const Label = forwardRef(({ className, text, style, size, type, random, ...props }, ref) => {
 	type = type ?? 'info';
 	return (
 		<>

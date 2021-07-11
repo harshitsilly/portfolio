@@ -1,14 +1,14 @@
-import { Box, Text } from '../../atoms';
+import { Box, Label } from '../../atoms';
 import styles from './index.module.scss';
 
+const data = ['Javascript', 'CSS', 'React', 'Cypress', 'Nodejs', 'Typescript', 'GraphQl'];
 const Skills = ({ name, index }) => {
 	return (
 		<>
-			<Box pad="xs">
-				<Text className={styles.listItemHeader} bold align="left">
-					{name}
-				</Text>
-				<Box></Box>
+			<Box direction="row" mDirection="row" pad="xs">
+				{data.map((skill) => (
+					<Label className={styles.skill} text={skill} />
+				))}
 			</Box>
 		</>
 	);

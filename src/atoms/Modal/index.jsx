@@ -23,7 +23,6 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, ...props 
 							<style jsx>{`
 								.modal {
 									position: absolute;
-									min-width: 800px;
 									left: 50%;
 									top: 50%;
 									transform: translate(-50%, -50%);

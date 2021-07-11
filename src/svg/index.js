@@ -4,3 +4,4 @@ export const moon = import('./moon.svg');
 export const sun = import('./sun.svg');
 export const link = import('./link.svg');
 export const github = import('./github.svg');
+export const resize = import('./resize.svg');

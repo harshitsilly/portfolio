@@ -15,7 +15,7 @@ const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, li
 	return (
 		<>
 			{showModal && (
-				<Modal onClose={() => setShowModal(false)}>
+				<Modal onClose={() => setShowModal(false)} style={!isMobile && images ? { minWidth: '800px' } : {}}>
 					<Box pad={isMobile ? '' : 'm'}>
 						<Box direction="row" mDirection="row">
 							<Text bold header align="left" style={{ paddingRight: '20px' }}>
