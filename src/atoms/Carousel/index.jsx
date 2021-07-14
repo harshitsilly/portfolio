@@ -1,11 +1,19 @@
-import { forwardRef, useEffect, cloneElement } from 'react';
+import { forwardRef, useEffect, cloneElement, useLayoutEffect, createRef } from 'react';
 import PropTypes from 'prop-types';
 import * as Constants from '../constants';
 
-const Carousel = forwardRef(({ className, style, children, ...props }, ref) => {
+const Carousel = forwardRef(({ className, style, children, type, ...props }, ref) => {
+	const carouselRef = createRef(ref);
+	useLayoutEffect(() => {
+		const carousel = carouselRef.current;
+		const height = window.innerHeight - carousel.getBoundingClientRect().top;
+		for (let i = 0; i < carousel.children.length; i++) {
+			carousel.children[i].style.height = `${height}px`;
+		}
+	});
 	return (
 		<>
-			<div ref={ref} className={className} style={style}>
+			<div ref={carouselRef} className={className} style={style}>
 				{children?.map((element, index) =>
 					cloneElement(element, { style: { ...element.props.style, margin: '15px 20px 10px 0' } })
 				)}
@@ -13,8 +21,9 @@ const Carousel = forwardRef(({ className, style, children, ...props }, ref) => {
 			<style jsx>{`
 				div {
 					display: flex;
-					flex-direction: row;
+					flex-direction: ${type === 'vertical' ? 'column' : 'row'};
 					overflow-x: scroll;
+					overflow-y: ${type === 'vertical' ? 'scroll' : 'none'};
 				}
 				@media only screen and (max-width: 600px) {
 					div {

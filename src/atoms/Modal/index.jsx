@@ -4,10 +4,17 @@ import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
 import { s, m } from '../constants';
 
-const Modal = forwardRef(({ title, className, onClose, style, bgColor, ...props }, ref) => {
-	useEffect(() => {});
+const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...props }, ref) => {
+	const [_document, set_document] = useState(null);
 
-	const container = document.getElementsByClassName('app')[0];
+	useEffect(() => {
+		set_document(document);
+	});
+
+	if (!_document) {
+		return null;
+	}
+	const container = _document.getElementsByClassName('app')[0];
 
 	return (
 		<>
@@ -29,6 +36,8 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, ...props 
 									z-index: 1;
 									background-color: ${bgColor ? bgColor : 'var(--background)'};
 									border-radius: 20px;
+									width: ${full ? '100%' : 'auto'};
+									height: ${full ? '100%' : 'auto'};
 								}
 								.content {
 									padding: 2rem;

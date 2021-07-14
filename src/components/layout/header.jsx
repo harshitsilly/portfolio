@@ -24,7 +24,7 @@ export default function Header({}) {
 					<Box onClick={() => router.push('/blog')}>Blog</Box>
 					{/* <Box onClick={() => router.push('snippets')}>StoryBoard</Box> */}
 
-					<Theme navUtils />
+					<Theme navUtils dark />
 
 					<Button
 						onClick={() =>
