@@ -1,0 +1,30 @@
+import { Text, Box } from '../../../atoms';
+import useIsMobile from '../../../utils/useIsMobile';
+
+export const Content = () => {
+	const isMobile = useIsMobile();
+	return (
+		<>
+			<Box>
+				<Text header bold>
+					EdgeRover
+				</Text>
+				<Box direction="row">
+					<div
+						style={{
+							background: 'url("images/career/wd/edgeRover.webp")',
+							height: isMobile ? '250px' : '400px',
+							width: isMobile ? '100%' : '45%',
+							backgroundPosition: 'center',
+							backgroundSize: 'contain',
+							backgroundRepeat: 'no-repeat',
+						}}
+					/>
+					<div></div>
+				</Box>
+			</Box>
+		</>
+	);
+};
+
+<Content />

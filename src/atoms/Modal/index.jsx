@@ -40,7 +40,7 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...
 									height: ${full ? '100%' : 'auto'};
 								}
 								.content {
-									padding: 2rem;
+									padding: ${full ? '1rem' : '2rem'};
 								}
 								.closeBtn {
 									position: absolute;
@@ -61,7 +61,7 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...
 										border-radius: 0px;
 									}
 									.content {
-										padding: 2rem;
+										padding: ${full ? '1rem' : '2rem'};
 										overflow-y: scroll;
 										height: 100vh;
 									}

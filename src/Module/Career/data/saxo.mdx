@@ -1,11 +1,50 @@
-import { Carousel, Text, Box } from '../../../atoms';
+import { Text, Box, Carousel } from '../../../atoms';
+import useIsMobile from '../../../utils/useIsMobile';
 
-<Carousel type='vertical'>
-<Box>
-    <Text header bold> Saxo Trader GO</Text>
-</Box>
-<Box>
-    <Text header bold> Saxo Investor</Text>
-</Box>
+export const Content = () => {
+	const isMobile = useIsMobile();
+	return (
+		<>
+			<Carousel type="vertical" noScroll>
+				<Box>
+					<Text header bold>
+						Saxo Trader GO
+					</Text>
+					<Box direction="row">
+						<div
+							style={{
+								background: 'url("images/career/saxo/go.png")',
+								height: isMobile ? '250px' : '400px',
+								width: isMobile ? '100%' : '45%',
+								backgroundPosition: 'center',
+								backgroundSize: 'contain',
+								backgroundRepeat: 'no-repeat',
+							}}
+						/>
+						<div></div>
+					</Box>
+				</Box>
+				<Box>
+					<Text header bold>
+						Saxo Investor
+					</Text>
+					<Box direction="row">
+						<div
+							style={{
+								background: 'url("images/career/saxo/investor.webp")',
+								height: isMobile ? '250px' : '400px',
+								width: isMobile ? '100%' : '45%',
+								backgroundPosition: 'center',
+								backgroundSize: 'contain',
+								backgroundRepeat: 'no-repeat',
+							}}
+						/>
+						<div></div>
+					</Box>
+				</Box>
+			</Carousel>
+		</>
+	);
+};
 
-</Carousel>
+<Content />
