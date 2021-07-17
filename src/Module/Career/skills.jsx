@@ -7,7 +7,7 @@ const Skills = ({ name, index }) => {
 		<>
 			<Box direction="row" mDirection="row" pad="xs">
 				{data.map((skill) => (
-					<Label className={styles.skill} text={skill} />
+					<Label m text={skill} />
 				))}
 			</Box>
 		</>

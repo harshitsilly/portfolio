@@ -2,7 +2,7 @@ import { forwardRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { xxs } from './../constants';
 
-const Label = forwardRef(({ className, text, style, size, type, random, ...props }, ref) => {
+const Label = forwardRef(({ className, text, style, size, type, random, m, ...props }, ref) => {
 	type = type ?? 'info';
 	return (
 		<>
@@ -19,6 +19,7 @@ const Label = forwardRef(({ className, text, style, size, type, random, ...props
 					font-weight: 500;
 					opacity: 0.9;
 					width: max-content;
+					margin: ${m ? '8px 10px' : 'auto'};
 				}
 			`}</style>
 		</>

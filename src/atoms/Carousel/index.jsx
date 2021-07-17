@@ -23,7 +23,6 @@ const Carousel = forwardRef(({ className, style, children, type, noScroll, ...pr
 					} else {
 						setSelectedDot(selectedDot - 1);
 					}
-					scrollPosition = carousel.scrollTop;
 				}, 50);
 			});
 		}

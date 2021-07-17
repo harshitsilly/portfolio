@@ -2,17 +2,14 @@
 	padding: 10px 20px;
 }
 .projectItemList {
-	margin: 40px 0;
-	background: var(--color-gray-100);
+	margin: 20px 0 0 0;
+	background: linear-gradient(180deg, var(--color-homepage-light), var(--color-gray-100));
 }
 
 .card {
 	max-width: 400px;
 	margin: 35px 10px;
 	position: relative;
-	> :first-child {
-		border-radius: 10px;
-	}
 	> :last-child {
 		margin-top: 20px;
 	}

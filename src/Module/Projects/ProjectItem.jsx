@@ -50,11 +50,21 @@ const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, li
 			<Box className={styles.card} onClick={handleOpenModal}>
 				<Box
 					style={{
-						background: `url(${imgUrl}) center center / cover`,
+						background: 'white',
 						height: '250px',
 						width: `${isMobile ? '320px' : '380px'}`,
+						borderRadius: '10px',
 					}}
-				></Box>
+				>
+					<Box
+						style={{
+							background: `url(${imgUrl}) center center / cover`,
+							height: '250px',
+							width: `${isMobile ? '320px' : '380px'}`,
+							borderRadius: '10px',
+						}}
+					></Box>
+				</Box>
 				{tag && <Label className={styles.cardLabel} type="secondary" text={tag} />}
 				<Box>
 					<Text bold header>

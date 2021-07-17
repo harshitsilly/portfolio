@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, cloneElement } from 'react';
 
 import { Box, Text, Dropdown, Modal } from '../../atoms';
 import { useRouter } from 'next/router';
@@ -82,7 +82,7 @@ export default function Career() {
 							))}
 					</Dropdown>
 				)}
-				{content}
+				{content && cloneElement(content, { isMobile })}
 			</Box>
 		</Modal>
 	);

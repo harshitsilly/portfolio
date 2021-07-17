@@ -19,6 +19,12 @@ const Projects = () => {
 			setSelectedTag(availableTags[0]);
 		}
 	}, [tag]);
+	useEffect(() => {
+		document.querySelector(':root').style.setProperty('--color-footer', 'var(--color-gray-100)');
+		return () => {
+			document.querySelector(':root').style.setProperty('--color-footer', 'var(--color-background)');
+		};
+	}, []);
 	const onChangeTag = (tag) => {
 		setSelectedTag(tag);
 		router.push(tag);

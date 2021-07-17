@@ -1,50 +1,50 @@
-import { Text, Box, Carousel } from '../../../atoms';
-import useIsMobile from '../../../utils/useIsMobile';
+import { Text, Box, Link, Label } from '../../../atoms';
 
-export const Content = () => {
-	const isMobile = useIsMobile();
-	return (
-		<>
-			<Carousel type="vertical" noScroll>
-				<Box>
-					<Text header bold>
-						Saxo Trader GO
-					</Text>
-					<Box direction="row">
-						<div
-							style={{
-								background: 'url("images/career/saxo/go.png")',
-								height: isMobile ? '250px' : '400px',
-								width: isMobile ? '100%' : '45%',
-								backgroundPosition: 'center',
-								backgroundSize: 'contain',
-								backgroundRepeat: 'no-repeat',
-							}}
-						/>
-						<div></div>
-					</Box>
-				</Box>
-				<Box>
-					<Text header bold>
-						Saxo Investor
-					</Text>
-					<Box direction="row">
-						<div
-							style={{
-								background: 'url("images/career/saxo/investor.webp")',
-								height: isMobile ? '250px' : '400px',
-								width: isMobile ? '100%' : '45%',
-								backgroundPosition: 'center',
-								backgroundSize: 'contain',
-								backgroundRepeat: 'no-repeat',
-							}}
-						/>
-						<div></div>
-					</Box>
-				</Box>
-			</Carousel>
-		</>
-	);
-};
+<Carousel type="vertical" noScroll>
+<Box>
+<Box pad="m">
+<Text header bold>
+	<Link url="https://www.home.saxo/platforms/saxotradergo" text="Saxo Trader GO/Pro" type="text" />
+	<br />
 
-<Content />
+<div style={{display: props.isMobile ? 'none' : 'block'}} >
+
+_A comprehensive range of trading and investing features with a user-friendly interface._
+
+</div>
+
+</Text>
+</Box>
+<Box direction="row" style={{alignItems:"center"}}>
+<div
+				style={{
+					background: 'url("images/career/saxo/go.png")',
+					height: props.isMobile ? '200px' : '400px',
+					width: props.isMobile ? '100%' : '45%',
+					backgroundPosition: 'center',
+					backgroundSize: 'contain',
+					backgroundRepeat: 'no-repeat',
+				}}
+			/>
+<Box style={{width: props.isMobile ? '100%' : '55%'}} >
+
+1. Owner of compliance and product settings page across the Saxo platform offering for go, pro, investor and connect apps.
+
+2. Implementing microfrontend architecture to reuse blocks, components and modules across the platform to save development time and potential bug.
+
+3. Refactoring legacy react class components to hooks.
+
+<Box direction="row" mDirection="row">
+	<Label text="React" m/>
+	<Label text="Typescript" m/>
+	<Label text="CSS" m/>
+	<Label text="Cypress + Jest" m/>
+	
+</Box>
+</Box>
+</Box>
+</Box>
+</Carousel>
+
+<br />
+<br />

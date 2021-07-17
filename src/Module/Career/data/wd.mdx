@@ -1,30 +1,48 @@
-import { Text, Box } from '../../../atoms';
-import useIsMobile from '../../../utils/useIsMobile';
+import { Text, Box, Link, Label } from '../../../atoms';
 
-export const Content = () => {
-	const isMobile = useIsMobile();
-	return (
-		<>
-			<Box>
-				<Text header bold>
-					EdgeRover
-				</Text>
-				<Box direction="row">
-					<div
-						style={{
-							background: 'url("images/career/wd/edgeRover.webp")',
-							height: isMobile ? '250px' : '400px',
-							width: isMobile ? '100%' : '45%',
-							backgroundPosition: 'center',
-							backgroundSize: 'contain',
-							backgroundRepeat: 'no-repeat',
-						}}
-					/>
-					<div></div>
-				</Box>
-			</Box>
-		</>
-	);
-};
+<Box pad="m">
+<Text header bold>
+	<Link url="https://shop.westerndigital.com/support/software/edgerover" text="EdgeRover" type="alert" />
+	<br />
 
-<Content />
+<div style={{display: props.isMobile ? 'none' : 'block'}} >
+
+_All in one indexing/metadata solution for all the files on social media , cloud storage and pc/mobile._
+
+</div>
+
+</Text>
+</Box>
+<Box direction="row" style={{alignItems:"center"}}>
+<div
+				style={{
+					background: 'url("images/career/wd/edgeRover.webp")',
+					height: props.isMobile ? '200px' : '400px',
+					width: props.isMobile ? '100%' : '45%',
+					backgroundPosition: 'center',
+					backgroundSize: 'contain',
+					backgroundRepeat: 'no-repeat',
+				}}
+			/>
+<Box style={{width: props.isMobile ? '100%' : '55%'}} >
+
+1. Responsible for the desktop application pacakger and frontend.
+
+2. Design extension architecture with Master/slave configuration for the Edgerover app to communicate with device specific exceutables.
+
+3. Developed and open sourced <Link text="Electron Differential Updater" url='https://github.com/imjsElectron/electron-differential-updater'/> which helps in minimising update download size for mac by 90%.
+
+4. Improved the local devlopment environment and workflow by automating scripts and submodules.
+
+<Box direction="row" mDirection="row">
+	<Label text="React" m />
+	<Label text="CSS" m />
+	<Label text="Electron" m />
+	<Label text="Node" m />
+	<Label text="Javascript" m />
+	<Label text="jest" m/>
+</Box>
+</Box>
+</Box>
+<br/>
+<br/>
