@@ -1,15 +1,25 @@
-import { Box, Navbar, Theme, Button } from '../../atoms';
+import { Box, Navbar, Theme, Button, Icon, Label } from '../../atoms';
 import { useRouter } from 'next/router';
 import Intro from '../../Module/Intro/intro';
 import Curve from '../../svg/curve.svg';
 import styles from './index.module.scss';
+import useMobile from '../../utils/useIsMobile';
 
 export default function Header({}) {
 	const router = useRouter();
+	const isMobile = useMobile();
 	const isHeroHeader = router.asPath === '/' ? true : false;
 	return (
-		<Box className={`app ${isHeroHeader ? styles.bg : null}`}>
+		<Box className={`app ${isHeroHeader ? styles.bg : null}`} style={{ position: 'relative' }}>
 			<Box pad="l">
+				{isHeroHeader && (
+					<Label
+						type="success"
+						text="Work In Progress"
+						style={{ position: 'absolute', transform: 'rotate(-40deg)', top: '45px', left: '-5px' }}
+					/>
+				)}
+
 				<Navbar
 					title="Harshit Sinha"
 					onTitleClick={() => !isHeroHeader && router.push('/')}
@@ -20,12 +30,13 @@ export default function Header({}) {
 				>
 					{/* <Box>Resume</Box> */}
 					<Box onClick={() => router.push('/projects')}>Projects</Box>
-					<Box onClick={() => router.push('/snippets')}>Snippets</Box>
+					{/* <Box onClick={() => router.push('/snippets')}>Snippets</Box> */}
 					<Box onClick={() => router.push('/blog')}>Blog</Box>
 					{/* <Box onClick={() => router.push('snippets')}>StoryBoard</Box> */}
 
 					<Theme navUtils dark />
 
+					<Icon type="github" onClick={() => window.open('https://github.com/harshitsilly')} navUtils />
 					<Button onClick={() => window.open('/resume.pdf')} navUtils text="Resume" />
 				</Navbar>
 			</Box>
