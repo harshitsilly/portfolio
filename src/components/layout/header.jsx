@@ -10,7 +10,7 @@ export default function Header({}) {
 	const isMobile = useMobile();
 	const isHeroHeader = router.asPath === '/' ? true : false;
 	return (
-		<Box className={`app ${isHeroHeader ? styles.bg : null}`} style={{ position: 'relative' }}>
+		<Box className={`app ${isHeroHeader ? styles.bg : null}`}>
 			<Box pad="l">
 				{isHeroHeader && (
 					<Label
