@@ -15,8 +15,8 @@ export default function Header({}) {
 				{isHeroHeader && (
 					<Label
 						type="success"
-						text="Work In Progress"
-						style={{ position: 'absolute', transform: 'rotate(-40deg)', top: '45px', left: '-5px' }}
+						text="Site Under Construction"
+						style={{ position: 'absolute', transform: 'rotate(-40deg)', top: '45px', left: '-10px', zIndex: '100' }}
 					/>
 				)}
 
