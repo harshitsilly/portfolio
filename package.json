@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "webImage": "node scripts/image.js",
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm webImage && next build",
     "start": "next start",
     "storybook": "start-storybook",
     "build-storybook": "build-storybook"
