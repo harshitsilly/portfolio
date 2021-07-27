@@ -17,7 +17,7 @@ function convertImage(imageDir = path.join(process.cwd(), 'public/images')) {
 			}
 			const filePathWithoutExt = filePath.substr(0, filePath.lastIndexOf('.'));
 			try {
-				execSync(`${cwebpPath} ${filePath} -q 80 -o ${filePathWithoutExt}.webp`);
+				execSync(`${cwebpPath} ${filePath} -q 60 -o ${filePathWithoutExt}.webp`);
 			} catch (error) {
 				console.log(filePath, error);
 			}

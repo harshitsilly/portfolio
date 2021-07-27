@@ -5,7 +5,7 @@
   "scripts": {
     "webImage": "node scripts/image.js",
     "dev": "next dev",
-    "build": "npm run webImage && next build",
+    "build": "next build",
     "start": "next start",
     "storybook": "start-storybook",
     "build-storybook": "build-storybook"
