@@ -1,6 +1,6 @@
 import styles from './mobile.module.scss';
 
-export default function MobileShell() {
+const Shell = function () {
 	return (
 		<div className={styles.mobileShell}>
 			<figure>
@@ -19,4 +19,6 @@ export default function MobileShell() {
 			</figure>
 		</div>
 	);
-}
+};
+
+export default Shell;
