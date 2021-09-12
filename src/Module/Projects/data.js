@@ -44,7 +44,7 @@ export const data = [
 			'images/sellticket/sellticket3.webp',
 			'images/sellticket/sellticket4.webp',
 		],
-		link: 'https://sell--ticket.herokuapp.com/',
+		link: '/mobile/sellTicket',
 		github: 'https://github.com/harshitsilly/sell-ticket',
 		content: <SellTicket />,
 	},
