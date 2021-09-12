@@ -1,6 +1,6 @@
 import { Box, Navbar, Theme, Button, Icon, Label } from '../../atoms';
 import { useRouter } from 'next/router';
-import Intro from '../../Module/Intro/intro';
+import Intro from '../../module/Intro/intro';
 import Curve from '../../svg/curve.svg';
 import styles from './index.module.scss';
 import useMobile from '../../utils/useIsMobile';
