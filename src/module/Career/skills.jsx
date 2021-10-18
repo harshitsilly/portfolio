@@ -1,7 +1,7 @@
 import { Box, Label } from '../../atoms';
 import styles from './index.module.scss';
 
-const data = ['Javascript', 'CSS', 'React', 'Cypress', 'Nodejs', 'Typescript', 'GraphQl'];
+const data = ['Javascript', 'CSS', 'React', 'Cypress', 'Electron', 'Nodejs', 'Typescript', 'GraphQl'];
 const Skills = ({ name, index }) => {
 	return (
 		<>
