@@ -34,7 +34,7 @@ export default function Header({}) {
 					<Box onClick={() => router.push('/blog')}>Blog</Box>
 					{/* <Box onClick={() => router.push('snippets')}>StoryBoard</Box> */}
 
-					<Theme navUtils dark />
+					<Theme navUtils />
 
 					<Icon type="github" onClick={() => window.open('https://github.com/harshitsilly')} navUtils />
 					<Button onClick={() => window.open('/resume.pdf')} navUtils text="Resume" />
