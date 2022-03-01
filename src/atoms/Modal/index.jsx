@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useState, cloneElement } from 'react';
+import { forwardRef, useEffect, useState, useLayoutEffect } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
@@ -11,10 +11,14 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...
 		set_document(document);
 	});
 
+	useLayoutEffect(() => {
+		_document?.getElementsByTagName('body');
+	});
+
 	if (!_document) {
 		return null;
 	}
-	const container = _document.getElementsByClassName('app')[0];
+	const container = _document.getElementsByTagName('body')[0];
 
 	return (
 		<>
@@ -27,7 +31,17 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...
 								</span>
 								<div className="content">{props.children}</div>
 							</div>
+							<div className="modalOverlay"></div>
 							<style jsx>{`
+								.modalOverlay {
+									position: absolute;
+									height: 100vh;
+									width: 100vw;
+									left: 0;
+									top: 0;
+									background-color: var(--background);
+									opacity: 0.8;
+								}
 								.modal {
 									position: absolute;
 									left: 50%;
@@ -38,6 +52,7 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...
 									border-radius: 20px;
 									width: ${full ? '100%' : 'auto'};
 									height: ${full ? '100%' : 'auto'};
+									border: 1.5px solid var(--color-gray-200);
 								}
 								.content {
 									padding: ${full ? '1rem' : '2rem'};
