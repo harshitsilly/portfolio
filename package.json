@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"webImage": "node scripts/image.js",
-		"dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+		"dev": "PORT=6001 NODE_OPTIONS=--openssl-legacy-provider next dev",
 		"build": "NODE_OPTIONS=--openssl-legacy-provider next build",
 		"start": "NODE_OPTIONS=--openssl-legacy-provider next start",
 		"storybook": "start-storybook",

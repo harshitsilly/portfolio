@@ -12,7 +12,7 @@ const Projects = () => {
 	const router = useRouter();
 	const { tag } = router.query;
 	const [selectedTag, setSelectedTag] = useState(null);
-	useEffect(async () => {
+	useEffect(() => {
 		if (tag && tag[0]) {
 			setSelectedTag(tag[0]);
 		} else {

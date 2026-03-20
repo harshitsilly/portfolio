@@ -10,8 +10,16 @@
 	max-width: 400px;
 	margin: 35px 10px;
 	position: relative;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+	cursor: pointer;
 	> :last-child {
 		margin-top: 20px;
+	}
+	&:hover {
+		transform: translateY(-8px) scale(1.02);
+		box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 	}
 }
 .cardLabel {
@@ -20,7 +28,7 @@
 	right: -2px;
 }
 .subHeader {
-	margin-top: 20px;
+	margin: 15px 0px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -10,7 +10,7 @@ const Blog = ({ blogUrl, ...props }) => {
 	const isMobile = useIsMobile();
 	const [loader, setLoader] = useState(true);
 
-	useEffect(async () => {
+	useEffect(() => {
 		setLoader(false);
 	}, [blogUrl]);
 	const router = useRouter();

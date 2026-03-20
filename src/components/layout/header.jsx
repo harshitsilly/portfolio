@@ -12,13 +12,7 @@ export default function Header({}) {
 	return (
 		<Box className={`${isHeroHeader ? styles.bg : null}`}>
 			<Box pad="l">
-				{isHeroHeader && (
-					<Label
-						type="success"
-						text="Site Under Construction"
-						style={{ position: 'absolute', transform: 'rotate(-40deg)', top: '45px', left: '-10px', zIndex: '100' }}
-					/>
-				)}
+				{/* Site Under Construction banner removed */}
 
 				<Navbar
 					title="Harshit Sinha"

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Box, Text } from '../../atoms';
 import styles from './index.module.scss';
 import BlogItem from './BlogItem';
@@ -21,7 +20,6 @@ const availableBLogs = [
 ];
 
 const Tag = ({ tag }) => {
-	useEffect(async () => {}, []);
 	if (tag.toLowerCase() === 'all') {
 		return (
 			<Box className={styles.blogList}>

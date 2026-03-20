@@ -1,47 +1,50 @@
-import { Text, Box, Carousel } from '../../../atoms';
-import useIsMobile from '../../../utils/useIsMobile';
+import { Text, Box, Link, Label } from '../../../atoms';
 
-export const Content = () => {
-	const isMobile = useIsMobile();
-	return (
-		<>
-			<Carousel type="vertical" noScroll>
-				<Box>
-					<Text header bold>
-						Public Budget Formulation
-					</Text>
-					<Box direction="row">
-						<div
-							style={{
-								background: 'url("images/career/saxo/investor.webp")',
-								height: isMobile ? '200px' : '400px',
-								width: isMobile ? '100%' : '45%',
-								backgroundPosition: 'center',
-								backgroundSize: 'contain',
-								backgroundRepeat: 'no-repeat',
-							}}
-						/>
-						<div></div>
-					</Box>
-				</Box>
-				<Box>
-					<Box direction="row">
-						<div
-							style={{
-								background: 'url("images/career/sap/recast.webp")',
-								height: isMobile ? '250px' : '400px',
-								width: isMobile ? '100%' : '45%',
-								backgroundPosition: 'center',
-								backgroundSize: 'contain',
-								backgroundRepeat: 'no-repeat',
-							}}
-						/>
-						<div></div>
-					</Box>
-				</Box>
-			</Carousel>
-		</>
-	);
-};
+<Box pad="s">
+	<Text header bold>
+		Public Budget Formulation
+	</Text>
+</Box>
+<Box direction="row" style={{alignItems:"top",  justifyContent:"center"}}>
+	
+	<Box style={{width: props.isMobile ? '100%' : '55%'}} >
+		1. Reduced initial loading time of PBFC web app by almost 15% by implementing PRPL methodology with Service Worker.
 
-<Content />
+		2. Led a team of 3 UI Developers, realized 3 customer contracts during PBFC prototyping phase, and was responsible for frontend development from design phase to delivery.
+
+		<Box direction="row" mDirection="row">
+			<Label text="React" m />
+			<Label text="TypeScript" m />
+			<Label text="Webpack" m />
+			<Label text="Service Worker" m />
+		</Box>
+	</Box>
+</Box>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<Box pad="s">
+	<Text header bold>
+		License Plate and Facial Recognition
+	</Text>
+</Box>
+<Box direction="row" style={{alignItems:"top" , justifyContent:"center"}}>
+	<Box style={{width: props.isMobile ? '100%' : '55%'}} >
+		1. Developed application for masking of license plates and faces to ensure GDPR compliance.
+
+		2. Implemented license plate and face recognition techniques using YOLO library on top of Flask server.
+
+		3. Responsible for the React UI aspect of the application.
+
+		<Box direction="row" mDirection="row">
+			<Label text="React" m />
+			<Label text="Python" m />
+			<Label text="Flask" m />
+			<Label text="YOLO" m />
+		</Box>
+	</Box>
+</Box>
+<br/>
+<br/>

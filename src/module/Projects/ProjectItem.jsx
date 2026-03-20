@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Box, Text, Modal, Carousel, Label } from '../../atoms';
 import { setUrl } from '../../utils';
 import useIsMobile from '../../utils/useIsMobile';
@@ -7,7 +7,6 @@ import Icon from './../../atoms/Icon/index';
 
 const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, link, github, npm }) => {
 	const [showModal, setShowModal] = useState(false);
-	useEffect(async () => {}, []);
 	const handleOpenModal = useCallback((event) => {
 		setShowModal(true);
 	});
@@ -52,7 +51,7 @@ const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, li
 					style={{
 						background: 'white',
 						height: '250px',
-						width: `${isMobile ? '320px' : '380px'}`,
+						width: `${isMobile ? 'auto' : '380px'}`,
 						borderRadius: '10px',
 					}}
 				>
@@ -60,7 +59,7 @@ const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, li
 						style={{
 							background: `url(${imgUrl}) center center / cover`,
 							height: '250px',
-							width: `${isMobile ? '320px' : '380px'}`,
+							width: `${isMobile ? 'auto' : '380px'}`,
 							borderRadius: '10px',
 						}}
 					></Box>

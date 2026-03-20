@@ -1,0 +1,58 @@
+import { Text, Box, Link, Label } from '../../../atoms';
+
+<Box pad="m">
+	<Text header bold>
+		<Link url="https://vymo.com/" text="Web Platform / Vymo Web App" type="alert" />
+		<br />
+		<div style={{display: props.isMobile ? 'none' : 'block'}} >
+			Empowering financial institutions with intelligent solutions for distribution management and collections optimization
+
+		</div>
+		
+	</Text>
+</Box>
+<Box direction="row" mDirection="column" style={{alignItems:"center"}}>
+	<div
+		style={{
+			background: 'url("images/career/vymo/vymo.png")',
+			height: props.isMobile ? '200px' : '400px',
+			width: props.isMobile ? '100%' : '45%',
+			backgroundPosition: 'center',
+			backgroundSize: 'contain',
+			backgroundRepeat: 'no-repeat',
+		}}
+	/>
+	<Box style={{width: props.isMobile ? '100%' : '55%'}}>
+		1. Created <Link url="https://medium.com/vymo-engineering/microfrontend-redefined-9a9fd108045c" text="webPlatform" type="info" /> monorepo with micro-frontend architecture and custom webpack plugins, enabling multiple apps to be developed and published faster by reusing UI modules and depcruise in CI/CD. 
+
+		2. Developed an in-house UI component library with <Link url="https://staging.lms.getvymo.com/web-platform/branch/storybook/" text="Storybook" /> and visual tests framework (Chromatic) for faster loading times and better control.
+		
+		3. Speeded up the config tool development by 80% through AppBuilder where developers can drag and drop UI and bind the feature config.
+
+		4. Built <Text bold>Stepper</Text> component for multi-step workflows, enabling users to track progress through complex processes with validation at each step.
+
+		5. Created <Text bold>Playbook</Text> configuration system allowing product managers to define and manage business rules and workflows.
+
+		6. Developed <Text bold>Revyre BFF</Text> (Backend for Frontend) with new UI screen layouts, serving as the API gateway and data aggregation layer for the Revyre transition.
+
+		7. Open sourced <Link url="https://github.com/Vymo-Inc/reactProps-type-extractor" text="React PropTypes extractor" /> for extracting component prop types at build time.
+
+		8. Developed <Link url="/career/vymo-rag" text="VymoRag" /> - a QA chatbot that syncs knowledge bases (Slack, Confluence) using SSE API, RAG, and nomic-based embeddings.
+
+		9. Created custom <Link url="https://www.npmjs.com/package/eslint-plugin-import-guard" text="eslint-plugin-import-guard" /> library to enforce module import boundaries and prevent circular dependencies in large codebases.
+
+		<Box direction="row" mDirection="row">
+			<Label text="React" m />
+			<Label text="TypeScript" m />
+			<Label text="Webpack" m />
+			<Label text="Node.js" m />
+			<Label text="Python" m />
+			<Label text="Cypress" m />
+			<Label text="Jest" m />
+			<Label text="LLM/RAG" m />
+			<Label text="BFF" m />
+		</Box>
+	</Box>
+</Box>
+<br/>
+<br/>

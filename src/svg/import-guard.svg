@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Modern gradient for glass effect -->
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="bgMesh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glassBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background with mesh gradient -->
+  <rect width="800" height="600" fill="url(#bgMesh)"/>
+
+  <!-- Ambient light orbs for depth -->
+  <circle cx="200" cy="150" r="120" fill="#667eea" opacity="0.08" filter="url(#softGlow)"/>
+  <circle cx="600" cy="450" r="100" fill="#764ba2" opacity="0.08" filter="url(#softGlow)"/>
+
+  <!-- Glass panels with edge lighting -->
+  <g filter="url(#glassBlur)">
+    <!-- Left module - glass panel -->
+    <rect x="100" y="120" width="220" height="360" rx="24" fill="rgba(102, 126, 234, 0.08)" stroke="rgba(102, 126, 234, 0.3)" stroke-width="1.5"/>
+    <rect x="110" y="130" width="200" height="340" rx="16" fill="none" stroke="rgba(102, 126, 234, 0.15)" stroke-width="1"/>
+    <!-- Edge highlight -->
+    <rect x="100" y="120" width="220" height="4" rx="2" fill="rgba(102, 126, 234, 0.4)"/>
+
+    <!-- Code lines inside left panel -->
+    <g font-family="'JetBrains Mono', monospace" font-size="11" fill="#667eea" opacity="0.4">
+      <line x1="130" y1="180" x2="290" y2="180" stroke="rgba(102, 126, 234, 0.3)" stroke-width="1.5"/>
+      <line x1="130" y1="200" x2="270" y2="200" stroke="rgba(102, 126, 234, 0.3)" stroke-width="1.5"/>
+      <line x1="130" y1="220" x2="280" y2="220" stroke="rgba(102, 126, 234, 0.3)" stroke-width="1.5"/>
+      <line x1="130" y1="240" x2="260" y2="240" stroke="rgba(102, 126, 234, 0.3)" stroke-width="1.5"/>
+      <line x1="130" y1="260" x2="250" y2="260" stroke="rgba(102, 126, 234, 0.3)" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <g filter="url(#glassBlur)">
+    <!-- Right module - glass panel -->
+    <rect x="480" y="120" width="220" height="360" rx="24" fill="rgba(118, 75, 162, 0.08)" stroke="rgba(118, 75, 162, 0.3)" stroke-width="1.5"/>
+    <rect x="490" y="130" width="200" height="340" rx="16" fill="none" stroke="rgba(118, 75, 162, 0.15)" stroke-width="1"/>
+    <!-- Edge highlight -->
+    <rect x="480" y="120" width="220" height="4" rx="2" fill="rgba(118, 75, 162, 0.4)"/>
+
+    <!-- Code lines inside right panel -->
+    <g font-family="'JetBrains Mono', monospace" font-size="11" fill="#764ba2" opacity="0.4">
+      <line x1="510" y1="180" x2="670" y2="180" stroke="rgba(118, 75, 162, 0.3)" stroke-width="1.5"/>
+      <line x1="510" y1="200" x2="650" y2="200" stroke="rgba(118, 75, 162, 0.3)" stroke-width="1.5"/>
+      <line x1="510" y1="220" x2="660" y2="220" stroke="rgba(118, 75, 162, 0.3)" stroke-width="1.5"/>
+      <line x1="510" y1="240" x2="640" y2="240" stroke="rgba(118, 75, 162, 0.3)" stroke-width="1.5"/>
+      <line x1="510" y1="260" x2="630" y2="260" stroke="rgba(118, 75, 162, 0.3)" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Central guard element - glass shield -->
+  <g transform="translate(400, 300)" filter="url(#softGlow)">
+    <path d="M0 -90 L70 -45 L70 0 Q70 90 0 110 Q-70 90 -70 0 L-70 -45 Z"
+          fill="url(#glassGrad)"
+          opacity="0.25"/>
+    <path d="M0 -90 L70 -45 L70 0 Q70 90 0 110 Q-70 90 -70 0 L-70 -45 Z"
+          fill="none"
+          stroke="url(#glassGrad)"
+          stroke-width="2"
+          opacity="0.6"/>
+    <!-- Shield checkmark -->
+    <path d="M-25 5 L-8 25 L25 -15"
+          stroke="white"
+          stroke-width="6"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.9"
+          filter="url(#glassBlur)"/>
+  </g>
+
+  <!-- Forbidden connections - red glowing lines -->
+  <g stroke="#ff6b6b" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6" filter="url(#glassBlur)">
+    <path d="M250 200 L330 200"/>
+    <polygon points="330,200 320,195 320,205" fill="#ff6b6b" opacity="0.6"/>
+
+    <path d="M550 200 L470 200"/>
+    <polygon points="470,200 480,195 480,205" fill="#ff6b6b" opacity="0.6"/>
+  </g>
+
+  <!-- Allowed connection - cyan glowing line -->
+  <g stroke="#4ecdc4" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6" filter="url(#glassBlur)">
+    <path d="M250 380 L330 380"/>
+    <polygon points="330,380 320,375 320,385" fill="#4ecdc4" opacity="0.6"/>
+  </g>
+
+  <!-- Title with modern typography -->
+  <text x="400" y="500" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="36" font-weight="600" fill="white" text-anchor="middle" opacity="0.95">
+    eslint-plugin-import-guard
+  </text>
+  <text x="400" y="540" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="400" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="0.5">
+    Enforce architectural boundaries
+  </text>
+</svg>

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Box, Text } from '../../atoms';
 import styles from './index.module.scss';
 import useIsMobile from '../../utils/useIsMobile';
@@ -6,7 +5,6 @@ import BlogItemHeader from './BlogItemHeader';
 
 const BlogItem = ({ header, imageUrl, ...props }) => {
 	const isMobile = useIsMobile();
-	useEffect(async () => {}, []);
 	return (
 		<Box direction="row" className={styles.blogItem}>
 			<Box

@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, cloneElement, useLayoutEffect, createRef, useState } from 'react';
+import { forwardRef, useEffect, cloneElement, useLayoutEffect, createRef, useState, Children } from 'react';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
@@ -49,13 +49,13 @@ const Carousel = forwardRef(({ className, style, children, type, noScroll, ...pr
 		<>
 			<div>
 				<div ref={carouselRef} className={className} style={style}>
-					{children?.map((element, index) =>
-						cloneElement(element, { style: { ...element.props.style, margin: '12.5px 20px 12.5px 0' } })
+					{Children.toArray(children).map((element, index) =>
+						cloneElement(element, { style: { ...element.props.style, margin: '12.5px 20px 12.5px 0' } }),
 					)}
 				</div>
 				{type === 'vertical' && noScroll && children?.length > 1 && (
 					<div id="scroll">
-						{children?.map((element, index) => (
+						{Children.toArray(children).map((element, index) => (
 							<motion.div
 								onClick={() => {
 									setSelectedDot(index);
