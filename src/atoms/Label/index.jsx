@@ -18,8 +18,7 @@ const Label = forwardRef(({ className, text, style, size, type, random, m, ...pr
 					font-size: ${size ? size : '0.9rem'};
 					font-weight: 500;
 					opacity: 0.9;
-					width: max-content;
-					margin: ${m ? '8px 10px' : 'auto'};
+					margin: ${m ? '8px 10px' : 'none'};
 				}
 			`}</style>
 		</>

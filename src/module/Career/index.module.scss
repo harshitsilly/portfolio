@@ -1,5 +1,26 @@
 .career {
 	justify-content: space-between;
+	gap: 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.panel {
+	background: linear-gradient(
+		180deg,
+		color-mix(in srgb, var(--color-background) 93%, transparent),
+		color-mix(in srgb, var(--color-background) 84%, transparent)
+	);
+	border: 1px solid var(--color-gray-200);
+	border-radius: 18px;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05), 0 1px 0 color-mix(in srgb, #fff 14%, transparent) inset;
+}
+
+.sectionHeader {
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 10px;
 }
 .border {
 	border-right: 5px dotted var(--color-gray-700);
@@ -19,4 +40,115 @@
 }
 .header {
 	padding-bottom: 10px;
+}
+
+.skillsRoot {
+	gap: 12px;
+	margin-top: 24px;
+}
+
+.skillsHint {
+	opacity: 0.68;
+	font-size: 0.9rem;
+	padding-bottom: 2px;
+}
+
+.skillsGroup {
+	padding: 12px 0;
+	gap: 9px;
+	border-top: 1px dashed var(--color-gray-300);
+}
+
+.skillsChips {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 4px;
+}
+
+.projectsSection {
+	margin-top: 20px;
+	padding: 16px;
+	border-radius: 18px;
+	border: 1px solid color-mix(in srgb, var(--color-gray-300) 60%, transparent);
+	background: linear-gradient(
+		180deg,
+		color-mix(in srgb, var(--color-background) 90%, transparent),
+		color-mix(in srgb, var(--color-background) 78%, transparent)
+	);
+	box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 16%, transparent);
+}
+
+.projectsGrid {
+	gap: 14px;
+	margin-top: 12px;
+}
+
+.projectCard {
+	width: calc(33.33% - 10px);
+	min-width: 240px;
+	padding: 12px;
+	border-radius: 14px;
+	border: 1px solid color-mix(in srgb, var(--color-gray-300) 70%, transparent);
+	background: color-mix(in srgb, var(--color-background) 90%, transparent);
+	transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+
+	&:hover {
+		transform: translateY(-4px);
+		border-color: var(--color-primary);
+		box-shadow: 0 14px 26px rgba(0, 0, 0, 0.08);
+	}
+}
+
+.projectImage {
+	width: 100%;
+	height: 138px;
+	object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.projectSub {
+	opacity: 0.74;
+	font-size: 0.88rem;
+	margin-top: 6px;
+}
+
+@media only screen and (max-width: 600px) {
+	.shell {
+		margin: 6px 10px 16px;
+		border-radius: 16px;
+		box-shadow: none;
+		border-color: color-mix(in srgb, var(--color-gray-300) 40%, transparent);
+	}
+
+	.career {
+		gap: 12px;
+	}
+
+	.panel {
+		border-radius: 14px;
+		box-shadow: none;
+	}
+
+	.projectsSection {
+		margin-top: 12px;
+		padding: 10px;
+		border-radius: 14px;
+	}
+
+	.projectsGrid {
+		gap: 8px;
+	}
+
+	.projectCard {
+		width: 100%;
+		min-width: unset;
+	}
+
+	.listItemTime {
+		margin-left: 6px;
+		font-size: 0.84rem;
+	}
 }

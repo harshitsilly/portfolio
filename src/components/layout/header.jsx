@@ -1,4 +1,4 @@
-import { Box, Navbar, Theme, Button, Icon, Label } from '../../atoms';
+import { Box, MeshGradient, Navbar, Theme } from '../../atoms';
 import { useRouter } from 'next/router';
 import Intro from '../../module/Intro/intro';
 import Curve from '../../svg/curve.svg';
@@ -9,35 +9,33 @@ export default function Header({}) {
 	const router = useRouter();
 	const isMobile = useMobile();
 	const isHeroHeader = router.asPath === '/' ? true : false;
+
 	return (
 		<Box className={`${isHeroHeader ? styles.bg : null}`}>
-			<Box pad="l">
-				{/* Site Under Construction banner removed */}
-
-				<Navbar
-					title="Harshit Sinha"
-					onTitleClick={() => !isHeroHeader && router.push('/')}
-					padH="35px"
-					align="center"
-					bold
-					badgeUrl="https://lh3.googleusercontent.com/a-/AOh14GjrmAiuLXnp-zwzoHuJ0JFwNqwIq3FM4Qu7SMr1-w%3Ds96-c"
-				>
-					{/* <Box>Resume</Box> */}
-					<Box onClick={() => router.push('/projects')}>Projects</Box>
-					{/* <Box onClick={() => router.push('/snippets')}>Snippets</Box> */}
-					<Box onClick={() => router.push('/blog')}>Blog</Box>
-					{/* <Box onClick={() => router.push('snippets')}>StoryBoard</Box> */}
-
-					<Theme navUtils />
-
-					<Icon type="github" onClick={() => window.open('https://github.com/harshitsilly')} navUtils />
-					<Button onClick={() => window.open('/resume.pdf')} navUtils text="Resume" />
-				</Navbar>
+			<Box className={!isMobile ? styles.topNavFixed : ''}>
+				<Box pad="l" className={styles.topNavContainer}>
+					<Navbar
+						title="Harshit Sinha"
+						onTitleClick={() => router.push('/')}
+						padH="35px"
+						align="center"
+						bold
+						badgeUrl="https://lh3.googleusercontent.com/a-/AOh14GjrmAiuLXnp-zwzoHuJ0JFwNqwIq3FM4Qu7SMr1-w%3Ds96-c"
+					>
+						<Box onClick={() => router.push('/projects')}>Projects</Box>
+						<Box onClick={() => router.push('/blog')}>Blog</Box>
+						<Box className={styles.resumeLink} onClick={() => window.open('/resume.pdf')}>
+							Resume
+						</Box>
+						<Theme navUtils />
+					</Navbar>
+				</Box>
 			</Box>
+			{!isMobile && <div className={styles.navSpacer} />}
 			{isHeroHeader && (
 				<>
 					<Intro></Intro>
-					<Curve style={{ width: '100vw', fill: 'var(--color-background)' }}></Curve>
+					{/* <Curve style={{ width: '100%', fill: 'var(--color-footer)' }}></Curve> */}
 				</>
 			)}
 		</Box>

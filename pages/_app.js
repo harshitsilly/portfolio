@@ -3,17 +3,19 @@ import './css/index.scss';
 import Layout from '../src/components/layout';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { Loader } from './../src/atoms';
+import { Loader, CommandPalette } from './../src/atoms';
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
 	const [appLoader, setAppLoader] = useState(false);
+	const [isCommandOpen, setIsCommandOpen] = useState(false);
 
 	useEffect(() => {
 		router.events.on('routeChangeStart', () => setAppLoader(true));
 		router.events.on('routeChangeComplete', () =>
 			setTimeout(() => {
 				setAppLoader(false);
+				setIsCommandOpen(false);
 			}, 500)
 		);
 		router.events.on('routeChangeError', () =>
@@ -27,6 +29,29 @@ function MyApp({ Component, pageProps }) {
 			router.events.off('routeChangeError');
 		};
 	}, []);
+
+	useEffect(() => {
+		const onKeyDown = (event) => {
+			const key = event.key?.toLowerCase();
+			if ((event.metaKey || event.ctrlKey) && key === 'k') {
+				event.preventDefault();
+				setIsCommandOpen((prev) => !prev);
+			}
+			if (key === 'escape') {
+				setIsCommandOpen(false);
+			}
+		};
+
+		const onOpenCommand = () => setIsCommandOpen(true);
+		window.addEventListener('keydown', onKeyDown);
+		window.addEventListener('open-command-palette', onOpenCommand);
+
+		return () => {
+			window.removeEventListener('keydown', onKeyDown);
+			window.removeEventListener('open-command-palette', onOpenCommand);
+		};
+	}, []);
+
 	return (
 		<>
 			<Head>
@@ -37,6 +62,8 @@ function MyApp({ Component, pageProps }) {
 			<Layout pageProps style={appLoader ? { visibility: 'hidden' } : { height: '100vh', overflowY: 'scroll', overflowX: 'hidden' }}>
 				<Component {...pageProps}></Component>
 			</Layout>
+
+			<CommandPalette isOpen={isCommandOpen} onClose={() => setIsCommandOpen(false)} />
 			{appLoader && <Loader />}
 		</>
 	);

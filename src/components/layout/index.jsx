@@ -7,10 +7,10 @@ export default function Layout({ children, style, pageProps }) {
 	const router = useRouter();
 	return (
 		<div style={style}>
-			{!['/wedding' ].includes(router.route) &&<Header />}
-			
+			{!['/wedding', '/career'].includes(router.route) && <Header />}
+
 			{children}
-			{!['/bucketList','/wedding' ].includes(router.route) && <Footer />}
+			{!['/bucketList', '/wedding'].includes(router.route) && <Footer />}
 		</div>
 	);
 }

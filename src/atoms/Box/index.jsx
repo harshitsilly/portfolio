@@ -2,7 +2,7 @@ import { forwardRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as Constants from '../constants';
 
-const Box = forwardRef(({ className, onClick, style, block, ...props }, ref) => {
+const Box = forwardRef(({ className, onClick, style, block, children, direction, mDirection, pad, width, ...rest }, ref) => {
 	useEffect(() => {
 		// window.addEventListener();
 		return () => {};
@@ -11,12 +11,12 @@ const Box = forwardRef(({ className, onClick, style, block, ...props }, ref) => 
 	if (block) {
 		return (
 			<>
-				<div ref={ref} onClick={onClick} className={className} style={style}>
-					{props.children}
+				<div ref={ref} onClick={onClick} className={className} style={style} {...rest}>
+					{children}
 				</div>
 				<style jsx>{`
 					div {
-						padding: ${Constants[props.pad]};
+						padding: ${Constants[pad]};
 						cursor: ${onClick ? 'pointer' : 'inherit'};
 					}
 				`}</style>
@@ -25,22 +25,22 @@ const Box = forwardRef(({ className, onClick, style, block, ...props }, ref) => 
 	}
 	return (
 		<>
-			<div ref={ref} onClick={onClick} className={className} style={style}>
-				{props.children}
+			<div ref={ref} onClick={onClick} className={className} style={style} {...rest}>
+				{children}
 			</div>
 			<style jsx>{`
 				div {
 					display: flex;
-					flex-direction: ${props.direction ?? 'column'};
+					flex-direction: ${direction ?? 'column'};
 					flex-wrap: wrap;
-					padding: ${Constants[props.pad]};
-					width: ${props.width ?? 'auto'};
+					padding: ${Constants[pad]};
+					width: ${width ?? 'auto'};
 					cursor: ${onClick ? 'pointer' : 'inherit'};
 				}
 
 				@media only screen and (max-width: 600px) {
 					div {
-						flex-direction: ${props.mDirection ?? 'column'};
+						flex-direction: ${mDirection ?? 'column'};
 						width: auto;
 					}
 				}

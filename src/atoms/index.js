@@ -11,5 +11,7 @@ import Carousel from './Carousel';
 import Label from './Label';
 import Link from './Link';
 import Dropdown from './Dropdown';
+import MeshGradient from './MeshGradient';
+import CommandPalette from './CommandPalette';
 
-export { Box, Text, Navbar, Icon, Modal, Theme, Button, Loader, Badge, Carousel, Label, Link, Dropdown };
+export { Box, Text, Navbar, Icon, Modal, Theme, Button, Loader, Badge, Carousel, Label, Link, Dropdown, MeshGradient, CommandPalette };
