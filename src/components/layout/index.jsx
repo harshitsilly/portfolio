@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 export default function Layout({ children, style, pageProps }) {
 	const router = useRouter();
 	return (
-		<div style={style}>
+		<div id="app-scroll-root" style={style}>
 			{!['/wedding', '/career'].includes(router.route) && <Header />}
 
 			{children}

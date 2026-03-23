@@ -17,7 +17,7 @@ const HomeProjectsPreview = () => {
 				<Text bold header align="left">
 					Featured Projects
 				</Text>
-				<Button variant="secondary" text="See all" onClick={() => router.push('/projects')} />
+				<Button className={styles.footerButton} variant="secondary" text="See all" onClick={() => router.push('/projects')} />
 			</Box>
 			<Box direction="row" mDirection="column" className={styles.projectsGrid}>
 				{featured.map((project) => (

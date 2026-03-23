@@ -7,10 +7,10 @@ export const data = [
 	{
 		type: 'Work',
 		data: [
-			{ name: 'Vymo', time: 'Jul 2022 - Jan 2026', index: 4, logo: setUrl('images/career/vymo.svg'), content: <Vymo /> },
-			{ name: 'SaxoBank Group', time: 'Apr 2021 - July 2022', index: 3, logo: setUrl('images/career/saxo.svg'), content: <Saxo /> },
-			{ name: 'Western Digital', time: 'Nov 2019 - Apr 2021', index: 2, logo: setUrl('images/career/wd.svg'), content: <WD /> },
-			{ name: 'Sap Labs', time: 'Aug 2015 - Nov 2019', index: 1, logo: setUrl('images/career/sap.svg'), content: <Sap /> },
+			{ name: 'Vymo', time: 'Jul 2022 - Jan 2026', index: 1, logo: setUrl('images/career/vymo.svg'), content: <Vymo /> },
+			{ name: 'SaxoBank Group', time: 'Apr 2021 - July 2022', index: 2, logo: setUrl('images/career/saxo.svg'), content: <Saxo /> },
+			{ name: 'Western Digital', time: 'Nov 2019 - Apr 2021', index: 3, logo: setUrl('images/career/wd.svg'), content: <WD /> },
+			{ name: 'Sap Labs', time: 'Aug 2015 - Nov 2019', index: 4, logo: setUrl('images/career/sap.svg'), content: <Sap /> },
 		],
 	},
 	{

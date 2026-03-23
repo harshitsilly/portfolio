@@ -11,24 +11,37 @@ function MyApp({ Component, pageProps }) {
 	const [isCommandOpen, setIsCommandOpen] = useState(false);
 
 	useEffect(() => {
-		router.events.on('routeChangeStart', () => setAppLoader(true));
-		router.events.on('routeChangeComplete', () =>
+		const handleRouteChangeStart = () => setAppLoader(true);
+
+		const handleRouteChangeComplete = () => {
 			setTimeout(() => {
 				setAppLoader(false);
 				setIsCommandOpen(false);
-			}, 500)
-		);
-		router.events.on('routeChangeError', () =>
+
+				if (typeof window !== 'undefined') {
+					window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+					const scrollRoot = document.getElementById('app-scroll-root');
+					if (scrollRoot) {
+						scrollRoot.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+					}
+				}
+			}, 500);
+		};
+
+		const handleRouteChangeError = () =>
 			setTimeout(() => {
 				setAppLoader(false);
-			}, 1000)
-		);
+			}, 1000);
+
+		router.events.on('routeChangeStart', handleRouteChangeStart);
+		router.events.on('routeChangeComplete', handleRouteChangeComplete);
+		router.events.on('routeChangeError', handleRouteChangeError);
 		return () => {
-			router.events.off('routeChangeStart');
-			router.events.off('routeChangeComplete');
-			router.events.off('routeChangeError');
+			router.events.off('routeChangeStart', handleRouteChangeStart);
+			router.events.off('routeChangeComplete', handleRouteChangeComplete);
+			router.events.off('routeChangeError', handleRouteChangeError);
 		};
-	}, []);
+	}, [router.events]);
 
 	useEffect(() => {
 		const onKeyDown = (event) => {

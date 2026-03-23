@@ -1,4 +1,4 @@
-import { Box, MeshGradient, Navbar, Theme } from '../../atoms';
+import { Box, Button, Navbar, Theme } from '../../atoms';
 import { useRouter } from 'next/router';
 import Intro from '../../module/Intro/intro';
 import Curve from '../../svg/curve.svg';
@@ -24,9 +24,9 @@ export default function Header({}) {
 					>
 						<Box onClick={() => router.push('/projects')}>Projects</Box>
 						<Box onClick={() => router.push('/blog')}>Blog</Box>
-						<Box className={styles.resumeLink} onClick={() => window.open('/resume.pdf')}>
+						<Button className={styles.resumeLink} onClick={() => window.open('/resume.pdf')}>
 							Resume
-						</Box>
+						</Button>
 						<Theme navUtils />
 					</Navbar>
 				</Box>
