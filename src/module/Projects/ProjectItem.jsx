@@ -46,24 +46,14 @@ const ProjectItem = ({ header, subDetail, imgUrl, images, tag, content, type, li
 					</Box>
 				</Modal>
 			)}
-			<Box className={styles.card} onClick={handleOpenModal}>
+			<Box className={styles.card} onClick={handleOpenModal} style={{ width: `${isMobile ? 'auto' : '400px'}` }}>
 				<Box
 					style={{
-						background: 'white',
+						background: `url(${imgUrl}) center center / cover`,
 						height: '250px',
-						width: `${isMobile ? 'auto' : '380px'}`,
 						borderRadius: '10px',
 					}}
-				>
-					<Box
-						style={{
-							background: `url(${imgUrl}) center center / cover`,
-							height: '250px',
-							width: `${isMobile ? 'auto' : '380px'}`,
-							borderRadius: '10px',
-						}}
-					></Box>
-				</Box>
+				></Box>
 				{tag && <Label className={styles.cardLabel} type="secondary" text={tag} />}
 				<Box>
 					<Text bold header>

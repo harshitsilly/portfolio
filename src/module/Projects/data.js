@@ -9,7 +9,8 @@ export const data = [
 	{
 		header: 'Electron Differential Updater',
 		subDetail: 'Save download time and update size by upto 95%.',
-		detail: 'Open Source differential updater for Mac build on top of electron-builder. Minimise your update download by upto 95%. Preserve code signature and integrity.',
+		detail:
+			'Open Source differential updater for Mac build on top of electron-builder. Minimise your update download by upto 95%. Preserve code signature and integrity.',
 		imgUrl: setUrl('images/updater.webp'),
 		type: 'open source',
 		npm: {
@@ -18,6 +19,22 @@ export const data = [
 		},
 		github: 'https://github.com/imjsElectron/electron-differential-updater',
 		content: <EDU />,
+	},
+	{
+		header: 'eslint-plugin-import-guard',
+		subDetail: 'Enforce architectural boundaries in micro-frontend platforms',
+		imgUrl: setUrl('images/eslint-plugin-import-guard.svg'),
+		type: 'open source',
+		github: 'https://github.com/harshitsilly/eslint-plugin-import-guard',
+		content: <ImportGuard />,
+	},
+	{
+		header: 'react-props-type-extractor',
+		subDetail: 'Extract React component prop types at build time',
+		imgUrl: setUrl('images/react-props-type-extractor.svg'),
+		type: 'open source',
+		github: 'https://github.com/Vymo-Inc/reactProps-type-extractor',
+		content: <ReactPropsExtractor />,
 	},
 	{
 		header: 'React UI Library',
@@ -33,22 +50,7 @@ export const data = [
 		type: 'open source',
 		content: <Contributions />,
 	},
-	{
-		header: 'eslint-plugin-import-guard',
-		subDetail: 'Enforce architectural boundaries in micro-frontend platforms',
-		imgUrl: setUrl('images/import-guard.svg'),
-		type: 'open source',
-		github: 'https://github.com/harshitsilly/eslint-plugin-import-guard',
-		content: <ImportGuard />,
-	},
-	{
-		header: 'react-props-type-extractor',
-		subDetail: 'Extract React component prop types at build time',
-		imgUrl: setUrl('images/react-props-extractor.svg'),
-		type: 'open source',
-		github: 'https://github.com/Vymo-Inc/reactProps-type-extractor',
-		content: <ReactPropsExtractor />,
-	},
+
 	{
 		header: 'SellTicket',
 		subDetail: 'Buy/Resale ticket from one place.',

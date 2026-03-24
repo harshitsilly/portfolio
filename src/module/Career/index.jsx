@@ -12,8 +12,8 @@ const Work = () => {
 	const router = useRouter();
 	return (
 		<>
-			<MeshGradient className={styles.meshLayer} />
-			<Box id="experience" pad={isMobile ? 'l' : 'xxl'} className={styles.shell}>
+			<MeshGradient />
+			<Box id="experience" pad={isMobile ? 's' : 'xxl'} className={styles.shell}>
 				<Box direction="row" mDirection="column" className={styles.career}>
 					<Box pad={isMobile ? 's' : 'l'} style={{ position: 'relative' }} className={styles.panel}>
 						<Box direction="row" mDirection="row" className={styles.sectionHeader}>

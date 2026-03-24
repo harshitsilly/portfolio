@@ -6,9 +6,9 @@ import styles from './career.module.scss';
 import { data } from './data';
 import useIsMobile from '../../utils/useIsMobile';
 
-const work = data.filter(({ type }) => type === 'Work')[0].data;
+const work = [...data.filter(({ type }) => type === 'Work')[0].data];
 export default function Career() {
-	const [selected, setSelected] = useState(work.length);
+	const [selected, setSelected] = useState(1);
 	const [content, setContent] = useState();
 	const router = useRouter();
 	const isMobile = useIsMobile();
@@ -21,7 +21,7 @@ export default function Career() {
 				{!isMobile && (
 					<Box direction="row" mDirection="row" className={styles.header}>
 						{work
-							.sort((a, b) => a.index - b.index)
+							.sort((a, b) => b.index - a.index)
 							.map(({ name, time, logo, index, content }) => (
 								<Box
 									direction="row"
@@ -53,7 +53,7 @@ export default function Career() {
 				{isMobile && (
 					<Dropdown>
 						{work
-							.sort((a, b) => b.index - a.index)
+							.sort((a, b) => a.index - b.index)
 							.map(({ name, time, logo, index, content }) => (
 								<Box
 									direction="row"

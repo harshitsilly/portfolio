@@ -255,12 +255,12 @@
 
 @media only screen and (max-width: 600px) {
 	.introWrap {
-		padding-top: 4px;
-		padding-bottom: 4px;
+		padding-top: 0;
+		padding-bottom: 0;
 	}
 
 	.introGrid {
-		gap: 12px;
+		gap: 24px;
 		flex-wrap: wrap;
 	}
 
@@ -272,7 +272,7 @@
 	.leftPanel,
 	.rightPanel {
 		border-radius: 14px;
-		padding: 12px;
+		padding: 10px;
 		box-shadow: none;
 		backdrop-filter: none;
 	}

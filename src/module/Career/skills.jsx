@@ -4,15 +4,15 @@ import styles from './index.module.scss';
 const skillGroups = [
 	{
 		title: 'Frontend',
-		skills: ['JavaScript', 'TypeScript', 'React', 'Redux', 'NextJs', 'Cypress', 'Jest / RTL', 'Electron'],
+		skills: ['JavaScript', 'TypeScript', 'React', 'Redux', 'NextJs', 'HTMl"', 'Cypress', 'Jest / RTL', 'Electron'],
 	},
 	{
 		title: 'Backend',
-		skills: ['Node.js', 'Python', 'MongoDB', 'GraphQL', , 'Postgres', 'ChromaDB'],
+		skills: ['Node.js', 'Python', 'MongoDB', 'Postgres', 'GraphQL', 'ChromaDB'],
 	},
 	{
 		title: 'AI/Platform',
-		skills: ['AWS', 'GCP', 'Cursor', 'Codex'],
+		skills: ['Webpack', 'Vite', 'AWS', 'GCP', 'Cursor', 'Codex'],
 	},
 ];
 
@@ -21,7 +21,7 @@ const Skills = () => {
 		<>
 			<Box className={styles.skillsRoot}>
 				{skillGroups.map((group) => (
-					<Box key={group.title} className={styles.skillsGroup} >
+					<Box key={group.title} className={styles.skillsGroup}>
 						<Text bold>{group.title}</Text>
 						<Box direction="row" mDirection="row" className={styles.skillsChips}>
 							{group.skills.map((skill) => (

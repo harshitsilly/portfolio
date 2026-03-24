@@ -122,6 +122,7 @@ const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align,
 						position: absolute;
 						top: ${s};
 						right: ${s};
+						z-index: 3;
 					}
 					@media only screen and (max-width: 600px) {
 						div {

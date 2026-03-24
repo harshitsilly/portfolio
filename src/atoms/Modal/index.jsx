@@ -61,6 +61,7 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...
 									position: absolute;
 									top: ${m};
 									right: ${m};
+									z-index: 1000;
 								}
 								@media only screen and (max-width: 600px) {
 									.modal {

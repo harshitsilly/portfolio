@@ -9,8 +9,9 @@ const Intro = () => {
 	const highlights = [
 		'Architected a micro-frontend monorepo with reusable packages, guardrails, and CI checks for faster multi-app releases.',
 		'Built internal AppBuilder workflows that reduced configuration-tool development time by ~80%.',
+		'Standarised the schema and built the BFF layer for Revyre REST APIs.',
 		'Open-sourced electron-differential-updater for macOS, cutting update payload size by up to 95%.',
-		'Delivered production AI workflows (VymoRAG) for knowledge sync, retrieval, and contextual assistant experiences.',
+		'Delivered production RAG (VymoRAG) for knowledge sync, retrieval, and contextual assistant experiences.',
 	];
 
 	const proofChips = [
@@ -40,7 +41,7 @@ const Intro = () => {
 
 	return (
 		<>
-			<Box id="hero" pad={isMobile ? 's' : 'xl'} className={styles.introWrap}>
+			<Box id="hero" pad={isMobile ? '' : 'xl'} className={styles.introWrap}>
 				<motion.div variants={stagger} initial="hidden" animate="visible">
 					<Box
 						direction="row"
@@ -57,12 +58,12 @@ const Intro = () => {
 									</Box>
 								</Box>
 								<Text className={styles.name}>Harshit Sinha</Text>
-								<Text className={styles.eyebrow}>Principal Frontend Engineer · Delhi</Text>
+								<Text className={styles.eyebrow}>Principal Frontend Engineer · India</Text>
 
 								<Text className={styles.summary}>
-									I build modern web foundations where design systems, and engineering work together. Across Vymo, Saxo,
-									Western Digital, and SAP Labs, I have led initiatives in reusable UI architecture, application coding ,
-									developer productivity, and reliable release pipelines.
+									I build modern and scalable web applications where design systems, and engineering work together. Across
+									Vymo, Saxo, Western Digital, and SAP Labs, I have led initiatives in reusable UI architecture,
+									application coding , developer productivity, and reliable release pipelines.
 								</Text>
 
 								<Box className={styles.proofGrid}>
