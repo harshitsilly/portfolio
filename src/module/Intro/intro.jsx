@@ -8,7 +8,7 @@ const Intro = () => {
 
 	const highlights = [
 		'Architected a micro-frontend monorepo with reusable packages, guardrails, and CI checks for faster multi-app releases.',
-		'Reduced internal selfserve configuration development effort by ~80% through AppBuilder tool.',
+		'Developed an in-house UI component library with Storybook and visual tests framework (Chromatic) for faster loading times and better control.',
 		'Improved API consistency and integration speed by standardizing schema contracts and building the Revyre BFF layer.',
 		'Reduced macOS app update payload size by up to 95% through the open-source electron-differential-updater.',
 		'Shipped VymoRAG to production for faster enterprise knowledge retrieval and contextual assistant responses.',

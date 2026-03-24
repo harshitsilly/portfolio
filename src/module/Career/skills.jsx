@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 const skillGroups = [
 	{
 		title: 'Frontend',
-		skills: ['JavaScript', 'TypeScript', 'React', 'Redux', 'NextJs', 'HTMl"', 'Cypress', 'Jest / RTL', 'Electron'],
+		skills: ['JavaScript', 'TypeScript', 'React', 'Redux', 'NextJs', 'HTMlL', 'Cypress', 'Jest / RTL', 'Electron'],
 	},
 	{
 		title: 'Backend',

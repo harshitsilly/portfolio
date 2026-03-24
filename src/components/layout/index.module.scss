@@ -94,6 +94,61 @@
 	}
 }
 
+.floatingSocialBar {
+	position: fixed;
+	left: 16px;
+	bottom: 20px;
+	z-index: 5;
+	pointer-events: none;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 10px 8px;
+	border-radius: 12px;
+	border: 1px solid color-mix(in srgb, var(--color-gray-500) 35%, transparent);
+	background: color-mix(in srgb, var(--color-background) 86%, transparent);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+
+	a {
+		pointer-events: auto;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 34px;
+		height: 34px;
+		border-radius: 10px;
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		text-decoration: none;
+		color: var(--color);
+		border: 1px solid color-mix(in srgb, var(--color-gray-400) 44%, transparent);
+		background: color-mix(in srgb, var(--color-background) 90%, transparent);
+		transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+
+		&:hover {
+			transform: translateX(2px);
+			border-color: color-mix(in srgb, var(--color-secondary) 45%, var(--color-gray-400));
+			background: color-mix(in srgb, var(--color-secondary) 14%, transparent);
+		}
+	}
+}
+
+.socialIcon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 14px;
+	height: 14px;
+
+	:global(svg) {
+		width: 100% !important;
+		height: 100% !important;
+		fill: currentColor;
+	}
+}
+
 @media only screen and (max-width: 600px) {
 	.topNavFixed {
 		position: static;
@@ -136,5 +191,38 @@
 	.footerButton {
 		margin-top: 4px;
 		padding: 8px 12px !important;
+	}
+
+	.floatingSocialBar {
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+		flex-direction: row;
+		padding: 8px;
+		gap: 8px;
+
+		a {
+			width: 30px;
+			height: 30px;
+			font-size: 0.7rem;
+
+			&:hover {
+				transform: translateY(-1px);
+			}
+		}
+	}
+
+	.footer {
+		padding-bottom: 72px;
+	}
+
+	.socialIcon {
+		width: 12px;
+		height: 12px;
+
+		:global(svg) {
+			width: 100% !important;
+			height: 100% !important;
+		}
 	}
 }

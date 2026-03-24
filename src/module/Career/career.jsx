@@ -1,6 +1,6 @@
 import { useState, useEffect, cloneElement } from 'react';
 
-import { Box, Text, Dropdown, Modal } from '../../atoms';
+import { Box, Text, Dropdown, MeshGradient } from '../../atoms';
 import { useRouter } from 'next/router';
 import styles from './career.module.scss';
 import { data } from './data';
@@ -12,78 +12,77 @@ export default function Career() {
 	const [content, setContent] = useState();
 	const router = useRouter();
 	const isMobile = useIsMobile();
+
+	const sortedWork = [...work].sort((a, b) => b.index - a.index);
+
 	useEffect(() => {
-		setContent(work[work.length - 1].content);
+		setContent(sortedWork[sortedWork.length - 1].content);
 	}, []);
+
 	return (
-		<Modal onClose={() => router.push('/')} full>
-			<Box>
+		<>
+			<Box className={styles.pageWrap}>
+				<Box className={styles.pageHead} direction="row">
+					<Box block>
+						<Text bold header>
+							Career Journey
+						</Text>
+					</Box>
+				</Box>
+
 				{!isMobile && (
 					<Box direction="row" mDirection="row" className={styles.header}>
-						{work
-							.sort((a, b) => b.index - a.index)
-							.map(({ name, time, logo, index, content }) => (
-								<Box
-									direction="row"
-									mDirection="row"
-									style={
-										selected === index
-											? {
-													margin: '5px 18px',
-													padding: '7px',
-													background: 'var(--color-gray-100)',
-													borderRadius: '5px',
-											  }
-											: { margin: '10px 25px' }
-									}
-									onClick={() => {
-										setSelected(index);
-										setContent(content);
-									}}
-								>
-									<img className={styles.logo} src={logo} alt />
-									<Box>
-										<Text bold>{name}</Text>
-										<Text style={{ opacity: 0.9, fontSize: '12px' }}>{time}</Text>
-									</Box>
+						{sortedWork.map(({ name, time, logo, index, content }) => (
+							<Box
+								key={name}
+								direction="row"
+								mDirection="row"
+								className={`${styles.tabItem} ${selected === index ? styles.tabItemActive : ''}`}
+								onClick={() => {
+									setSelected(index);
+									setContent(content);
+								}}
+							>
+								<img className={styles.logo} src={logo} alt={name} />
+								<Box>
+									<Text bold>{name}</Text>
+									<Text className={styles.time}>{time}</Text>
 								</Box>
-							))}
+							</Box>
+						))}
 					</Box>
 				)}
+
 				{isMobile && (
-					<Dropdown>
-						{work
+					<Dropdown className={styles.mobileDropdown}>
+						{[...work]
 							.sort((a, b) => a.index - b.index)
 							.map(({ name, time, logo, index, content }) => (
 								<Box
+									key={name}
 									direction="row"
 									mDirection="row"
-									style={
-										selected === index
-											? {
-													margin: '5px 18px',
-													padding: '7px',
-													background: 'var(--color-gray-100)',
-													borderRadius: '5px',
-											  }
-											: { margin: '10px 25px' }
-									}
+									className={`${styles.tabItem} ${selected === index ? styles.tabItemActive : ''}`}
 									onClick={() => {
 										setSelected(index);
 										setContent(content);
 									}}
 								>
-									<img className={styles.logo} src={logo} alt />
+									<img className={styles.logo} src={logo} alt={name} />
 									<Box>
 										<Text bold>{name}</Text>
-										<Text style={{ opacity: 0.9, fontSize: '12px' }}>{time}</Text>
+										<Text className={styles.time}>{time}</Text>
 									</Box>
 								</Box>
 							))}
 					</Dropdown>
 				)}
-				{content && cloneElement(content, { isMobile })}
+
+				<Box className={styles.contentWrap}>{content && cloneElement(content, { isMobile })}</Box>
+				<Box block className={styles.backHome} onClick={() => router.push('/')}>
+					← Back to home
+				</Box>
 			</Box>
-		</Modal>
+		</>
 	);
 }

@@ -31,8 +31,7 @@ export default function Header({}) {
 						badgeUrl="https://lh3.googleusercontent.com/a-/AOh14GjrmAiuLXnp-zwzoHuJ0JFwNqwIq3FM4Qu7SMr1-w%3Ds96-c"
 					>
 						<Box onClick={() => navigateToSection('experience')}>Experience</Box>
-						<Box onClick={() => navigateToSection('projects')}>Projects</Box>
-						<Box onClick={() => navigateToSection('contact')}>Contact</Box>
+						<Box onClick={() => router.push('/projects')}>Projects</Box>
 						<Box onClick={() => router.push('/blog')}>Blog</Box>
 						<Button className={styles.resumeLink} onClick={() => window.open('/resume.pdf')}>
 							Resume
