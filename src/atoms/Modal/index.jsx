@@ -47,7 +47,7 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...
 									left: 50%;
 									top: 50%;
 									transform: translate(-50%, -50%);
-									z-index: 1;
+									z-index: 100;
 									background-color: ${bgColor ? bgColor : 'var(--background)'};
 									border-radius: 20px;
 									width: ${full ? '100%' : 'auto'};
@@ -75,6 +75,7 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...
 										z-index: 1;
 										background-color: var(--background);
 										border-radius: 0px;
+										z-index: 100;
 									}
 									.content {
 										padding: ${full ? '1rem' : '2rem'};

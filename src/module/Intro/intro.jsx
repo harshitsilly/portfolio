@@ -62,8 +62,8 @@ const Intro = () => {
 
 								<Text className={styles.summary}>
 									I build modern and scalable web applications where design systems, and engineering work together. Across
-									Vymo, Saxo, Western Digital, and SAP Labs, I have led initiatives in reusable UI architecture,
-									application coding , developer productivity, and reliable release pipelines.
+									Vymo, Saxo, Western Digital, and SAP Labs, I have led initiatives in reusable UI architecture, feature
+									coding, developer productivity, and reliable release pipelines.
 								</Text>
 
 								<Box className={styles.proofGrid}>
