@@ -1,6 +1,6 @@
 .career {
 	justify-content: space-between;
-	gap: 24px;
+	gap: 28px;
 	position: relative;
 	z-index: 1;
 }
@@ -20,7 +20,7 @@
 .sectionHeader {
 	justify-content: space-between;
 	align-items: center;
-	padding-bottom: 10px;
+	padding-bottom: 12px;
 }
 .border {
 	border-right: 5px dotted var(--color-gray-700);
@@ -71,8 +71,8 @@
 }
 
 .projectsSection {
-	margin-top: 20px;
-	padding: 16px;
+	margin-top: 26px;
+	padding: 18px;
 	background: linear-gradient(
 		180deg,
 		color-mix(in srgb, var(--color-background) 90%, transparent),
@@ -82,21 +82,29 @@
 }
 
 .projectsGrid {
-	gap: 36px;
-	margin-top: 12px;
+	gap: 22px;
+	margin-top: 14px;
 }
 
 .projectCard {
 	max-width: 340px;
-	padding: 12px;
+	padding: 14px;
 	border: 1px solid var(--color-gray-200);
 	border-radius: 18px;
 	background: color-mix(in srgb, var(--color-background) 90%, transparent);
+	cursor: pointer;
 	transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 
 	&:hover {
-		transform: translateY(-4px);
+		transform: translateY(-3px);
+		border-color: color-mix(in srgb, var(--color-secondary) 34%, var(--color-gray-200));
 		box-shadow: 0 14px 26px rgba(0, 0, 0, 0.08);
+	}
+
+	&:focus-visible {
+		outline: none;
+		border-color: color-mix(in srgb, var(--color-secondary) 45%, var(--color-gray-200));
+		box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-secondary) 20%, transparent);
 	}
 }
 
@@ -112,6 +120,15 @@
 	opacity: 0.74;
 	font-size: 0.88rem;
 	margin-top: 6px;
+	line-height: 1.5;
+}
+
+.projectType {
+	font-size: 0.72rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	opacity: 0.64;
+	padding-bottom: 6px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -133,7 +150,7 @@
 
 	.projectsSection {
 		margin-top: 32px;
-		padding: 8px;
+		padding: 10px;
 		border-radius: 14px;
 	}
 

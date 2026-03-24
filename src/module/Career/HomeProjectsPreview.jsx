@@ -21,8 +21,21 @@ const HomeProjectsPreview = () => {
 			</Box>
 			<Box direction="row" mDirection="column" className={styles.projectsGrid}>
 				{featured.map((project) => (
-					<Box key={project.header} className={styles.projectCard} onClick={() => router.push('/projects')}>
+					<Box
+						key={project.header}
+						className={styles.projectCard}
+						onClick={() => router.push('/projects')}
+						tabIndex={0}
+						role="button"
+						onKeyDown={(e) => {
+							if (e.key === 'Enter' || e.key === ' ') {
+								e.preventDefault();
+								router.push('/projects');
+							}
+						}}
+					>
 						<img src={project.imgUrl} alt={project.header} className={styles.projectImage} />
+						<Text className={styles.projectType}>{project.type || 'project'}</Text>
 						<Text bold align="left">
 							{project.header}
 						</Text>

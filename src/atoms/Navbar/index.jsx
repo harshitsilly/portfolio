@@ -69,18 +69,28 @@ const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align,
 		return props.children.map((element, index) => {
 			if (element.props.navUtils) {
 				return (
-					<motion.div whileHover={{ scale: 1.1 }} style={getNavStyle()} data-key={index} key={index}>
+					<motion.div whileHover={{ scale: 1.03 }} style={getNavStyle()} data-key={index} key={index}>
 						{element}
 					</motion.div>
 				);
 			}
 			return (
 				<motion.div
+					tabIndex={0}
+					role="button"
+					aria-label={`Navigate to ${String(element.props?.children || 'section')}`}
+					onKeyDown={(e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
+							e.preventDefault();
+							element.props.onClick();
+							onNavBarClick(e);
+						}
+					}}
 					onClick={(e) => {
 						element.props.onClick();
 						onNavBarClick(e);
 					}}
-					whileHover={{ scale: 1.1 }}
+					whileHover={{ scale: 1.03 }}
 					whileTap={{ scale: 0.9 }}
 					style={getNavStyle(index)}
 					data-key={index}
@@ -116,6 +126,12 @@ const Navbar = forwardRef(({ title, onTitleClick, className, padH, style, align,
 						display: flex;
 						flex-direction: row;
 						align-items: center;
+					}
+
+					div[role='button']:focus-visible {
+						outline: 2px solid color-mix(in srgb, var(--color-secondary) 55%, transparent);
+						outline-offset: 4px;
+						border-radius: 8px;
 					}
 
 					.closeBtn {

@@ -8,10 +8,10 @@ const Intro = () => {
 
 	const highlights = [
 		'Architected a micro-frontend monorepo with reusable packages, guardrails, and CI checks for faster multi-app releases.',
-		'Built internal AppBuilder workflows that reduced configuration-tool development time by ~80%.',
-		'Standarised the schema and built the BFF layer for Revyre REST APIs.',
-		'Open-sourced electron-differential-updater for macOS, cutting update payload size by up to 95%.',
-		'Delivered production RAG (VymoRAG) for knowledge sync, retrieval, and contextual assistant experiences.',
+		'Reduced internal selfserve configuration development effort by ~80% through AppBuilder tool.',
+		'Improved API consistency and integration speed by standardizing schema contracts and building the Revyre BFF layer.',
+		'Reduced macOS app update payload size by up to 95% through the open-source electron-differential-updater.',
+		'Shipped VymoRAG to production for faster enterprise knowledge retrieval and contextual assistant responses.',
 	];
 
 	const proofChips = [
@@ -24,18 +24,18 @@ const Intro = () => {
 		visible: {
 			opacity: 1,
 			transition: {
-				staggerChildren: 0.1,
-				delayChildren: 0.1,
+				staggerChildren: 0.08,
+				delayChildren: 0.06,
 			},
 		},
 	};
 
 	const rise = {
-		hidden: { opacity: 0, y: 18 },
+		hidden: { opacity: 0, y: 14 },
 		visible: {
 			opacity: 1,
 			y: 0,
-			transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+			transition: { duration: 0.48, ease: [0.22, 1, 0.36, 1] },
 		},
 	};
 

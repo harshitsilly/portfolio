@@ -5,8 +5,8 @@
 .introWrap {
 	position: relative;
 	z-index: 1;
-	padding-top: 10px;
-	padding-bottom: 18px;
+	padding-top: 14px;
+	padding-bottom: 28px;
 
 	> div {
 		max-width: 1120px;
@@ -15,7 +15,7 @@
 }
 
 .introGrid {
-	gap: 24px;
+	gap: 28px;
 	align-items: flex-start;
 	justify-content: space-between;
 	flex-wrap: nowrap;
@@ -41,7 +41,7 @@
 		radial-gradient(1200px 280px at -5% -20%, color-mix(in srgb, var(--color-secondary) 14%, transparent), transparent);
 	border: 1px solid var(--color-gray-300);
 	border-radius: 20px;
-	padding: 20px;
+	padding: 22px;
 	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04);
 	backdrop-filter: blur(6px);
 }
@@ -98,7 +98,7 @@
 }
 
 .summary {
-	margin: 24px 0px;
+	margin: 20px 0 18px;
 	line-height: 1.75;
 	opacity: 0.88;
 	max-width: 62ch;
@@ -115,9 +115,9 @@
 
 .ctaRow {
 	display: flex;
-	gap: 10px;
+	gap: 12px;
 	padding-top: 16px;
-	padding-bottom: 14px;
+	padding-bottom: 10px;
 	flex-wrap: wrap;
 }
 
@@ -135,7 +135,7 @@
 	font-weight: 650;
 	font-size: 0.93rem;
 	line-height: 1;
-	transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
+	transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
 .primaryCta {
@@ -147,6 +147,12 @@
 	&:hover {
 		transform: translateY(-1px);
 		box-shadow: 0 12px 26px color-mix(in srgb, var(--color-secondary) 45%, transparent);
+	}
+
+	&:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-secondary) 30%, transparent),
+			0 12px 26px color-mix(in srgb, var(--color-secondary) 45%, transparent);
 	}
 }
 
@@ -170,6 +176,12 @@
 		opacity: 1;
 		background: color-mix(in srgb, var(--color-gray-100) 75%, transparent);
 	}
+
+	&:focus-visible {
+		outline: none;
+		border-color: color-mix(in srgb, var(--color-secondary) 44%, transparent);
+		opacity: 1;
+	}
 }
 
 .secondaryCta {
@@ -183,13 +195,50 @@
 		background: color-mix(in srgb, var(--color-gray-100) 80%, transparent);
 		box-shadow: 0 10px 24px color-mix(in srgb, var(--color-gray-700) 15%, transparent);
 	}
+
+	&:focus-visible {
+		outline: none;
+		border-color: color-mix(in srgb, var(--color-secondary) 46%, var(--color-gray-500));
+		box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-secondary) 24%, transparent);
+	}
+}
+
+.quickLinks {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 4px 0 8px;
+
+	a {
+		font-size: 0.84rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: color-mix(in srgb, var(--color) 82%, var(--color-secondary));
+		opacity: 0.86;
+		padding: 4px 2px;
+		border-bottom: 1px dashed transparent;
+		transition: opacity 150ms ease, color 150ms ease, border-color 150ms ease;
+
+		&:hover {
+			opacity: 1;
+			color: var(--color-secondary);
+			border-bottom-color: color-mix(in srgb, var(--color-secondary) 60%, transparent);
+		}
+
+		&:focus-visible {
+			outline: none;
+			opacity: 1;
+			color: var(--color-secondary);
+			border-bottom-color: color-mix(in srgb, var(--color-secondary) 60%, transparent);
+		}
+	}
 }
 
 .proofGrid {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 10px;
-	padding-top: 8px;
+	padding-top: 10px;
 }
 
 .proofCard {
@@ -230,7 +279,7 @@
 }
 
 .highlights {
-	gap: 8px;
+	gap: 6px;
 	padding-top: 4px;
 }
 
@@ -256,7 +305,7 @@
 @media only screen and (max-width: 600px) {
 	.introWrap {
 		padding-top: 0;
-		padding-bottom: 0;
+		padding-bottom: 6px;
 	}
 
 	.introGrid {
@@ -272,9 +321,18 @@
 	.leftPanel,
 	.rightPanel {
 		border-radius: 14px;
-		padding: 10px;
+		padding: 12px;
 		box-shadow: none;
 		backdrop-filter: none;
+	}
+
+	.quickLinks {
+		gap: 10px;
+		padding-bottom: 6px;
+
+		a {
+			font-size: 0.8rem;
+		}
 	}
 
 	.summary {

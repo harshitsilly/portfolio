@@ -5,11 +5,11 @@ import styles from './index.module.scss';
 export default function Footer({}) {
 	return (
 		<>
-			<Box className={styles.footer}>
+			<Box id="contact" className={styles.footer}>
 				{/* <Curve style={{ transform: 'rotate(180deg)', width: '100%', fill: 'var(--color-footer)' }}></Curve> */}
 				<Box pad="l" className={styles.footerContent}>
 					<Text bold header className={styles.footerTitle}>
-						Interesting in hiring me or just want to catch up?
+						Interested in hiring me or want to catch up?
 					</Text>
 					<Text className={styles.footerSub}>
 						Drop me a line at harshit886@outlook.com or grab 30 mins to hop on a call with me

@@ -10,6 +10,14 @@ export default function Header({}) {
 	const isMobile = useMobile();
 	const isHeroHeader = router.asPath === '/' ? true : false;
 
+	const navigateToSection = (id) => {
+		if (router.pathname === '/') {
+			window.location.hash = id;
+			return;
+		}
+		router.push(`/#${id}`);
+	};
+
 	return (
 		<Box className={`${isHeroHeader ? styles.bg : null}`}>
 			<Box className={!isMobile ? styles.topNavFixed : ''}>
@@ -22,7 +30,9 @@ export default function Header({}) {
 						bold
 						badgeUrl="https://lh3.googleusercontent.com/a-/AOh14GjrmAiuLXnp-zwzoHuJ0JFwNqwIq3FM4Qu7SMr1-w%3Ds96-c"
 					>
-						<Box onClick={() => router.push('/projects')}>Projects</Box>
+						<Box onClick={() => navigateToSection('experience')}>Experience</Box>
+						<Box onClick={() => navigateToSection('projects')}>Projects</Box>
+						<Box onClick={() => navigateToSection('contact')}>Contact</Box>
 						<Box onClick={() => router.push('/blog')}>Blog</Box>
 						<Button className={styles.resumeLink} onClick={() => window.open('/resume.pdf')}>
 							Resume
