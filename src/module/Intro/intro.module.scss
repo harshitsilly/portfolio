@@ -5,12 +5,14 @@
 .introWrap {
 	position: relative;
 	z-index: 1;
-	padding-top: 14px;
-	padding-bottom: 28px;
+	min-height: calc(100vh - 120px);
+	min-height: calc(100svh - 120px);
+	justify-content: center;
 
 	> div {
 		max-width: 1120px;
 		margin: 0 auto;
+		width: 100%;
 	}
 }
 

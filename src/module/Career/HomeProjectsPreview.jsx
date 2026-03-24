@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Text, Button } from '../../atoms';
+import { Box, Text, Button, MeshGradient } from '../../atoms';
 import { data } from '../Projects/data';
 import styles from './index.module.scss';
 

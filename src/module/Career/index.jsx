@@ -133,11 +133,10 @@ const Work = () => {
 							<Skills />
 						</Box>
 					</RevealOnScroll>
-
-					<RevealOnScroll delay={0.14}>
-						<HomeProjectsPreview />
-					</RevealOnScroll>
 				</Box>
+				<RevealOnScroll delay={0.14}>
+					<HomeProjectsPreview />
+				</RevealOnScroll>
 			</Box>
 		</>
 	);

@@ -30,7 +30,7 @@ const MeshGradient = ({ className }) => {
 				}
 
 				.blobB {
-					top: 20%;
+					top: 40%;
 					right: -100px;
 					background: var(--color-secondary);
 				}
