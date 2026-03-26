@@ -23,7 +23,7 @@ export const data = [
 				name: 'SaxoBank Group',
 				time: 'Apr 2021 - July 2022',
 				index: 2,
-				logo: setUrl('images/career/saxo.svg'),
+				logo: setUrl('images/career/saxoLegacy.svg'),
 				highlights: [
 					'Owned charting, compliance, and product settings experiences across Saxo platforms.',
 					'Drove micro-frontend adoption to improve reuse and reduce duplicated engineering effort.',
@@ -35,7 +35,7 @@ export const data = [
 				name: 'Western Digital Corporation',
 				time: '11/2019 – 04/2021',
 				index: 3,
-				logo: setUrl('images/career/wd.svg'),
+				logo: setUrl('images/career/wd.jpeg'),
 				highlights: [
 					'Designed a VSCode-like modular extension architecture in EdgeRover to isolate extension lifecycle from the core Electron/Web app.',
 					'Owned desktop packaging and release workflows for the EdgeRover desktop experience.',

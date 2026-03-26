@@ -22,8 +22,11 @@ export default function Career() {
 	return (
 		<>
 			<Box className={styles.pageWrap}>
-				<Box className={styles.pageHead} direction="row">
-					<Box block>
+				<Box className={styles.pageHead} direction="row" alignItems="center">
+					<Box className={styles.backHome} onClick={() => router.push('/')}>
+						{isMobile ? '← Back' : '← Back to home'}
+					</Box>
+					<Box>
 						<Text bold header>
 							Career Journey
 						</Text>
@@ -79,9 +82,6 @@ export default function Career() {
 				)}
 
 				<Box className={styles.contentWrap}>{content && cloneElement(content, { isMobile })}</Box>
-				<Box block className={styles.backHome} onClick={() => router.push('/')}>
-					← Back to home
-				</Box>
 			</Box>
 		</>
 	);

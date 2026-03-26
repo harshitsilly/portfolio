@@ -14,15 +14,56 @@
 }
 
 .panel {
+	position: relative;
+	border-radius: 18px;
 	background: linear-gradient(
 		180deg,
 		color-mix(in srgb, var(--color-background) 93%, transparent),
 		color-mix(in srgb, var(--color-background) 84%, transparent)
 	);
 	border: 1px solid var(--color-gray-200);
-	border-radius: 18px;
 	backdrop-filter: blur(10px);
 	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05), 0 1px 0 color-mix(in srgb, #fff 14%, transparent) inset;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.panel::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	padding: 2px;
+	border-radius: 18px;
+
+	background: radial-gradient(circle at center, #ffffff 0%, var(--color-secondary) 20%, transparent 40%);
+	background-size: 300% 300%;
+
+	animation: lightning 10s linear infinite;
+
+	-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+
+	z-index: 0;
+	pointer-events: none;
+}
+
+@keyframes lightning {
+	0% {
+		background-position: 0% 0%;
+	}
+	25% {
+		background-position: 100% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	75% {
+		background-position: 0% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
 }
 
 .sectionHeader {

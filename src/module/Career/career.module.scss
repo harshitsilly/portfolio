@@ -63,9 +63,11 @@
 
 .backHome {
 	display: inline-flex;
+	position: absolute;
+	left: 40px;
+	top: 20px;
 	align-items: center;
-	margin-top: 6px;
-	padding: 8px 4px;
+	padding: 8px 0 2px 0;
 	font-size: 0.9rem;
 	font-weight: 600;
 	color: color-mix(in srgb, var(--color) 86%, var(--color-secondary));
@@ -76,6 +78,13 @@
 	&:hover {
 		color: var(--color-secondary);
 		border-bottom-color: color-mix(in srgb, var(--color-secondary) 70%, transparent);
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.backHome {
+		left: 20px;
+		top: 10px;
 	}
 }
 
