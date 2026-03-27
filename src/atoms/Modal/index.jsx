@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Icon from './../Icon/index';
 import { s, m } from '../constants';
 
-const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...props }, ref) => {
+const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, glass = false, ...props }, ref) => {
 	const [_document, set_document] = useState(null);
 
 	useEffect(() => {
@@ -40,7 +40,8 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...
 									left: 0;
 									top: 0;
 									background-color: var(--background);
-									opacity: 0.8;
+									opacity: ${glass ? '0.6' : '0.8'};
+									${glass ? 'backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);' : ''}
 								}
 								.modal {
 									position: absolute;
@@ -48,11 +49,18 @@ const Modal = forwardRef(({ title, className, onClose, style, bgColor, full, ...
 									top: 50%;
 									transform: translate(-50%, -50%);
 									z-index: 100;
-									background-color: ${bgColor ? bgColor : 'var(--background)'};
+									background-color: ${bgColor
+										? bgColor
+										: glass
+										? 'var(--color-blurred-background)'
+										: 'var(--background)'};
 									border-radius: 20px;
 									width: ${full ? '100%' : 'auto'};
 									height: ${full ? '100%' : 'auto'};
-									border: 1.5px solid var(--color-gray-200);
+									border: ${glass ? '1px solid var(--color-glass-border)' : '1.5px solid var(--color-gray-200)'};
+									${glass
+										? 'backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);'
+										: ''}
 								}
 								.content {
 									padding: ${full ? '1rem' : '2rem'};
@@ -96,6 +104,7 @@ Modal.propTypes = {
 	className: PropTypes.string,
 	onClose: PropTypes.func,
 	title: PropTypes.string,
+	glass: PropTypes.bool,
 };
 
 export default Modal;

@@ -34,7 +34,7 @@ const Projects = () => {
 		return <Loader />;
 	}
 	return (
-		<Box>
+		<Box className={styles.projects}>
 			<Tag className={styles.projectTag} onChangeTag={onChangeTag} data={availableTags} selectedTag={selectedTag} />
 
 			<Box direction="row" className={styles.projectItemList} style={{ justifyContent: 'space-around' }}>

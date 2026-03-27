@@ -8,7 +8,8 @@ html[data-theme='dark'] {
 	color: var(--color-text);
 	--color-background: hsl(210deg, 30%, 8%);
 	--color-footer: var(--color-background);
-	--color-blurred-background: hsla(210deg, 30%, 8%, 0.85);
+	--color-blurred-background: hsla(210deg, 30%, 8%, 0.6);
+	--color-glass-border: rgba(255, 255, 255, 0.1);
 	--color-primary: hsl(258deg, 92%, 68%);
 	--color-secondary: hsl(333deg, 100%, 52%);
 	--color-tertiary: hsl(53deg, 100%, 50%);
@@ -60,7 +61,8 @@ html[data-theme='light'] {
 	--color-text: hsl(222deg, 22%, 5%);
 	--color-background: hsl(0deg, 0%, 100%);
 	--color-footer: var(--color-background);
-	--color-blurred-background: hsla(0deg, 0%, 100%, 0.85);
+	--color-blurred-background: rgba(240, 240, 245, 0.3);
+	--color-glass-border: rgba(0, 0, 0, 0.1);
 	--color-primary: hsl(258deg, 78%, 52%);
 	--color-secondary: hsl(333deg, 100%, 45%);
 	--color-tertiary: hsl(255deg, 85%, 30%);
