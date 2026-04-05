@@ -25,7 +25,7 @@ const Skills = () => {
 						<Text bold>{group.title}</Text>
 						<Box direction="row" mDirection="row" className={styles.skillsChips}>
 							{group.skills.map((skill) => (
-								<Label key={skill} text={skill} />
+								<Label key={skill} text={skill} type="secondary" />
 							))}
 						</Box>
 					</Box>
